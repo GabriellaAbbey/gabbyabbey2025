@@ -1,0 +1,824 @@
+/* -----------------------
+--------------------------
+--------------------------
+
+CSS TABLE OF CONTENTS
+
+# GLOBAL STYLES
+    # GLOBAL VARIBLES (Colors, fonts ,etc.)
+    # GLOBAL COLORS
+    # GLOBAL TYPOGRAPHY
+    # GLOBAL MEDIA
+    # GLOBAL HELPERS
+
+
+# LAYOUT
+    #MEDIA QUERIES'
+    #TYPOGRPAHY
+
+# SITE STRUCTURE
+    # HEADER
+        # LOGO
+        # SITE NAV
+        # TOGGLE MENU
+        #NAV ICON + HAMBUGER
+        # SITE HEADER ON TOP OF HERO
+    # MAIN
+        # SECTIONS
+            # HERO
+    # FOOTER
+
+# UI COMPONTENTS 
+    # BUTTONS
+    # CARDS
+# GLOBAL MEDIA (Making images responsive)
+
+--------------------------
+--------------------------
+-------------------------*/
+
+ /* --------------------------
+ ---------GLOBALS---------
+ ---------------------------- */
+
+
+/* GLOBAL VARIBLES */
+:root {
+
+    /* THESES ARE MY COLORS */
+    
+        --color-body-background: rgb(255 255 255);
+        --color-text-body: rgb(0 0 0 / .8);
+        --color-text-headings: rgb(0 0 0 / 1);
+
+        --color-links: blue; 
+        --color-links-hover: darkblue;
+        --color-links-dark: rgb(102 102 102);
+        --color-links-darker: rgb(0 0 0);
+        --color-links-light: rgb(90, 169, 198);
+        --color-links-lighter: rgb(255 255 255);
+
+        --color-siteheader-background: transparent;
+        --color-siteheader-links: var(--color-text-headings);
+
+        --color-hero-background: rgb(100 100 100);
+        --color-hero-text: rgb(255 255 255 / .8);
+        --color-hero-headings: rgb(255 255 255 / 1);
+
+        --color-sitefooter-background: rgb(100 100 100);
+        --color-sitefooter-text: rgb(255 255 255 / .8);
+        --color-sitefooter-headings: rgb(255 255 255 / 1);
+        --color-sitefooter-links: rgb(255 255 255);
+
+        --color-togglemenu-text: rgb(255, 210, 158);
+        --color-togglemenu-background: rgb(82, 194, 194);
+
+    /* DEFINE ALL FONTS */
+        --font-body: system-ui, "Helvetica", Arial, sans-serif;
+        --font-headings: system-ui,Georgia, serif;
+
+        /* SIZING UNITS */
+        --container-width: 1100px;
+        --unit-small: 1em;
+        --unit-medium: 2em;
+        --unit-large: 4em;
+        --gridgap: 2em;
+
+
+}
+
+/* GLOBAL RESET */
+
+    /* CHANING BOX-SIZING FOR ALL TO BORDER-BOX */
+    * {
+        box-sizing: border-box;
+    }
+    
+    /* REMOVE THE DEAULT 8px MARGIN ON BODY*/
+    body {margin:0}
+
+
+/* GLOBAL COLORS */
+
+   /* SET THE COLOR OF THE MAIN BODY TEXT */
+    body {
+        color: var(--color-text-body);
+    /* SET THE COLOR OF THE BACKGROUND */
+        background-color: var(--color-body-background);
+    }
+     /* SET THE COLOR OF HEADINGS */
+    h1, h2, h3 {
+        color: var(--color-text-headings);
+    }
+
+    a {
+        /* SET THE COLOR OF ALL TEXT LINKS */
+        color: var(--color-links);
+
+        /* THIS IS A NEST HOVER STATE */
+        &:hover {
+
+            color:var(--color-links-hover);
+        }
+    }
+    
+/* GLOBAL TYPOGRAPHY */
+
+    /* FONT FAMILY */
+        /* BODY FONT */
+        body {
+            font-family: var(--font-body);
+            line-height: 1.4;
+        }
+
+
+        /* HEADING FONT  */
+        h1, h2, h3 {
+            font-family: var(--font-headings);
+        }
+
+    /* TYPOGRAPHIC SCALE */
+
+        .hero h1 {
+            font-size: 3em;
+            margin:0;
+        }
+
+        .hero p {
+            font-size: 3.5em;
+        }
+        h1 {
+
+            /* SET H1 FONT SIZE */
+            font-size: 3em;
+
+            /* SET H1 LEADING */
+            line-height: 1;
+        }
+
+        h2 {
+
+            /* SET H1 FONT SIZE */
+            font-size: 2em;
+
+            /* SET H1 LEADING */
+            line-height: 1.2;
+        }
+        h3 {
+
+            /* SET H1 FONT SIZE */
+            font-size: 1.5em;
+
+            /* SET H1 LEADING */
+            line-height: 1.3;
+        }
+
+        p {
+            max-width: 65ch;
+            text-wrap: pretty;
+        }
+
+/* GLOBAL MEDIA */
+
+        img {
+            /* MAKE ALL IMAGES SHRINK ON SMALL SCREENS */
+            max-width: 100%;
+            height: auto;
+        }
+
+/* GLOBAL HELPERS */
+
+        /* HIDE ELEMENTS VISUALLY BUT NOT READERS AND SEARCH ENGINES */
+        .hide-visually {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+}
+
+
+
+.bottomleft {
+    position: fixed;
+    bottom: 8px;
+    left: 16px;
+    font-size: 18px;
+    padding: 16px;
+}
+.topleft {
+    position: fixed;
+    top: 8px;
+    left: 16px;
+    font-size: 18px;
+    padding: 16px;
+}
+.topright {
+    position: fixed;
+    top: 8px;
+    right: 16px;
+    font-size: 18px;
+    padding: 16px;
+}
+.bottomright {
+    position: fixed;
+    bottom: 8px;
+    right: 16px;
+    font-size: 18px;
+    padding: 16px;
+}
+
+.rightaligned {
+    text-align: right;
+
+}
+
+.stacked-title {
+    display: block;
+    font-size: 3em; /* Adjust font size as needed */
+  
+}
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* --------------------------
+---------LAYOUT--------------
+-------------------------- */
+
+
+/* RESPONSIVE TYPOGRAPHY  */
+
+
+
+/* SMALL SCREENS (MOBILE < 768PX) */
+
+        body {
+         /* 14 PX */
+            font-size: 87.5%;
+        }
+
+/* MEDIUM SCREENS (TABLETS < 1200PX) */
+        @media (min-width:768px) {
+            body {
+                /* 16 PX */
+                font-size: 100%;
+            }
+        }
+
+/* LARGE SCREENS (LAPTOP/DESKTOPS > 1200PX) */
+        @media (min-width:1200px) {
+            body {
+                /* 16 PX */
+                font-size: 112.5%;
+            }
+        }
+
+/* CONTAINER */
+        .container {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 1em;
+            
+        }
+
+/* GRID */
+        /* LARGE SCREENS ONLY */
+        @media (min-width: 768px) {
+            .row {
+                display: grid;
+                grid-template-columns:repeat(12, 1fr);
+                gap: 2em;
+              
+                
+            }
+            .one-half {grid-column: auto / span 6;}
+            .one-third {grid-column: auto / span 4;}
+            .two-thirds{grid-column: auto / span 8;}
+            .one-fourth {grid-column: auto / span 3;}
+            .three-fourths {grid-column: auto / span 9;}
+
+
+            } 
+            .row > * {
+                margin-bottom: var(--gridgap);
+                margin-top: var(--gridgap);
+            }
+
+
+            /* for demo */
+          .demo > * {
+            background-color: pink;
+            padding: 1em;
+            text-align: center;
+        }
+
+
+        /* CENTERED COLUMNS */
+        .one-half.centered { grid-column: 4/ span 6;}
+        .one-third.centered { grid-column: 5/ span 4;}
+        .two-thirds.centered { grid-column: 3 / span 8;}
+
+
+        /* 12 COLUMN CLASSES */
+        .col-1 {grid-column: auto / span 1;}
+        .col-2 {grid-column: auto / span 2;}
+        .col-3 {grid-column: auto / span 3;}
+        .col-4 {grid-column: auto / span 4;}
+        .col-5 {grid-column: auto / span 5;}
+        .col-6 {grid-column: auto / span 6;}
+        .col-7 {grid-column: auto / span 7;}
+        .col-8 {grid-column: auto / span 8;}
+        .col-9 {grid-column: auto / span 9;}
+        .col-10 {grid-column: auto / span 10;}
+        .col-11 {grid-column: auto / span 11;}
+        .col-12 {grid-column: auto / span 12;}
+
+
+        /* PUSHES */
+        .push-1 { grid-column-start: 2; }
+        .push-2 { grid-column-start: 3; }
+        .push-3 { grid-column-start: 4; }
+        .push-4 { grid-column-start: 5; }
+        .push-5 { grid-column-start: 6; }
+        .push-6 { grid-column-start: 7; }
+        .push-7 { grid-column-start: 8; }
+        .push-8 { grid-column-start: 9; }
+        .push-9 { grid-column-start: 10; }
+        .push-10 { grid-column-start: 11; }
+        .push-11 { grid-column-start: 12; }
+
+        /* SWAPPED (Reverse) WORKS ONLY WITH TWO CHILDREN */
+        .row.swapped > *:first-child { order: 2;}
+
+        .row.swapped > *:last-child { order: 1; }
+
+
+
+
+/* --------------------------
+--------SITE STRUCTURE-------
+-------------------------- */
+
+
+/* SITE HEADER */
+.site-header {
+background-color: var(--color-siteheader-background);
+
+/* PUT ALL HEADER CHILDREN SIDE-BY-SIDE AND VERT CENTERED ON LARGE SCREENS */
+@media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ADD SOME GENERAL SPACING AROUND THE HEADER */
+padding: var(--unit-small);
+
+/* REMOVE LINK UNDERLINES IN HEADER */
+a {
+    text-decoration: none;
+}
+
+/* SITE LOGO */
+.site-logo {
+
+    /* PUT SITE LOGO CHILDREN SIDE-BY-SIDE AND CENTER */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+
+    /* REMOVE MARGINS AND RESIZE H1 INSIDE HEADER */
+    h1 {
+        font-size: 2em;
+        margin: 0;
+        text-wrap: nowrap;
+    }
+
+    /* REMOVE THE SPACE UNDER THE LOGO MARK */
+    img, svg {
+        display: block;
+    }
+
+
+}
+
+
+/* SITE-NAV */
+.site-header-nav {
+
+ul {
+    /* REMOVE MARGINS & BULLETS FROM LIST */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+/* MAKE SITE NAV LINKS BIG LIKE BUTTONS */
+a {
+    display: block;
+    padding: 1em;
+}
+
+}
+
+}
+
+/* TOGGLE MENU */
+
+/* HIDE MENU BUTTON IF NOT USING TOGGLE NAV */
+.site-menu-button {
+display: none;
+}
+
+.toggle-menu {
+
+/* SET TOGGLE MENU COLORS */
+color: var(--color-togglemenu-text);
+
+
+display: flex;
+flex-direction: row-reverse;
+align-items: center;
+
+/* SHOW MENU BUTTON IF USING TOGGLE NAV */
+.site-menu-button {
+display: block;
+background-color: transparent;
+border: 1px solid var(--color-siteheader-links);
+color: var(--color-siteheader-links);
+padding: .5em;
+position: relative;
+z-index: 100;
+transition: .4s all ease-out;
+
+/* RESET BUTTON FONT SIZE TO SAME AS SITE HEADER NAV */
+font-size: inherit;
+
+&:hover {
+    cursor: pointer;
+}
+
+&:has(svg) {
+    
+    /* VERTICALLY ALIGN AND ADD GAP */
+    display: flex;
+    align-items: center;
+    gap: calc(var(--unit-small) / 2);
+
+    /* REMOVE BORDER */
+    border: none;
+
+    /* SET SVG COLOR */
+    svg {
+        fill: var(--color-siteheader-links);
+    }
+
+    /* ADD SUPPORT FOR SVG ANIMATION */
+    svg > * {
+        transition: .2s all ease-out;
+        transform-origin: center;
+    }
+
+}
+
+}
+
+.site-menu {
+position: fixed;
+top: 0;
+right: 0;
+z-index: 50;
+background-color: var(--color-togglemenu-background);
+width: 100%;
+min-height: 100svh;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+font-size: 3vw;
+transition: .4s all ease-out;
+
+a {
+    padding: 2vh 2vw;
+    color: var(--color-togglemenu-text);
+}
+}
+
+&[data-menustate="open"] {
+
+/* CHANGE COLORS TO TOGGLE MENU COLORS WHEN OPEN */
+--color-siteheader-links: var(--color-togglemenu-text);
+
+/* LOGO STAYS WHEN MENU IS OPEN< GET RID OF ME IF YOU DON'T WANT IT */
+.site-menu-button {
+    position: fixed;
+    z-index: 100;
+}
+
+/* SHOW THE SITE MENU WHEN OPEN */
+.site-menu {
+    transform: translateX(0);
+}
+
+/* ANIMATE THE NAVICON + HAMBURGER ICON */
+.site-menu-button svg {
+   
+    .simple-navicon-top {
+        transform: translate(-21%, 25%) rotate(45deg);
+    }
+    .simple-navicon-middle {
+        opacity: 0;
+    }
+    .simple-navicon-bottom {
+        /* OLD SCHOOL VERSION */
+        transform: translate(-21%, -25%) rotate(-45deg);
+    }
+}
+
+}
+
+&[data-menustate="closed"] {
+
+/* MOVE THE SIDE MENU TO THE RIGHT WHEN CLOSED */
+.site-menu {
+    transform: translateX(100%);
+}
+}
+}
+
+/* IF TOGGLE MENU DISPLAY LOGO ON LEFT AND MENU ON RIGHT ON ALL SCREENS */
+.site-header:has(.toggle-menu) {
+display: flex;
+justify-content: space-between;
+
+.site-logo {
+position: relative;
+z-index: 100;
+}
+
+}
+
+
+
+/* PLACE SITE HEADER ON TOP OF HERO ON LARGE SCREENS */
+.site-header.on-top-of-hero {
+
+@media (min-width: 768px) {
+
+    /* RENDER HEADER ON TOP OF HERO */
+    position: absolute;
+    width: 100%;
+
+    /* SET SITE HEADER LINK COLOR ON LARGE SCREENS */
+    a {
+        color: var(--color-siteheader-links);
+    }
+
+    /* ADD MORE SPACE ON TOP FOR THE ABSOLUTE HEADER */
+    & + .site-main > .hero {
+        padding-top: calc(4em + var(--unit-large));
+    }
+
+}
+
+}
+
+
+/* SECTIONS */
+
+section {
+padding: var(--unit-large) var(--unit-small);
+}
+
+/* HERO SECTION */
+.hero {
+background-color: var(--color-hero-background);
+color: var(--color-hero-text);
+
+/* ADDING MORE SPACEON ON ABSOLUTE HEADER */
+padding-top: calc(4em + var(--unit-large));
+
+h1, h2, h3 {
+    color: var(--color-hero-headings);
+}
+}
+
+
+/* LIGHTS */
+
+.lights {
+    scale: 1.1;
+ }
+ 
+
+/* SITE FOOTER */
+.site-footer {
+background-color: var(--color-sitefooter-background);
+color: var(--color-sitefooter-text);
+padding: var(--unit-small);
+
+h1, h2, h3 {
+    color: var(--color-sitefooter-headings)
+}
+
+a {
+    color: var(--color-sitefooter-links)
+}
+
+.site-nav {
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        
+    }
+}
+}
+
+
+
+/* --------------------------
+------ UI COMPONENTS ---------
+---------------------------- */
+
+
+
+/* TOGGLE BETWEEN DAY + NIGHT CONTENT */
+
+.day-content {
+    display: block; /* Default state */
+}
+
+.night-content {
+    display: none; /* Default state */
+}
+
+/* ALLOWS DAY AND NIGHT CONTENT TO BE TOGGLED*/
+body:has(input[type="checkbox"]:checked) {
+  
+  .day-content {
+    display: none;
+  }
+  .night-content {
+    display: block;
+  }
+}
+
+
+/* BUTTONS */
+.button {
+    /* BUTTON COLORS */
+    border: 1px solid var(--color-links);
+    color: white;
+    background-color: var(--color-links-light);
+
+    /* ENABLE BOX MODEL STYLING */
+    display: inline-block;
+    border-radius: 5px;
+    padding: var(--unit-small);
+    margin: var(--unit-small) 0; 
+    text-decoration: none;
+
+    + .button {
+        margin-left: var(--unit-small);
+    }
+
+    &:hover {
+        color: var(--color-text-body);
+        background-color: var(--color-links-hover);
+        border-color: var(--color-links-hover);
+    }
+
+    &.dark {
+        border-color: var(--color-links-dark);
+        background-color: var(--color-links-dark);
+        color: var(--color-links-lighter);
+
+    }
+
+    &.dark:hover {
+        color: var(--color-text-body);
+        background-color: var(--color-links-hover);
+        border-color: var(--color-links-hover);
+    }
+}
+
+
+ /* --------------------------
+------ SIMPLE CARD ---------
+---------------------------- */
+
+.centered-card-group {
+    display: flex;
+    justify-content: center;
+    gap: var(--unit-small);
+
+    .centered-card {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding:var(--unit-small);
+    }
+}
+
+
+
+/* ----------------------------
+---TOGGLE SWITCH DAY TO NIGHT--
+---------------------------- */
+
+.switcher {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  
+}
+
+.switcher input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0.4s;
+    border-radius: 34px;
+    background-color: blue;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+input[type="checkbox"]:checked + .slider {
+    background-color: orange; /* Blue for light theme */
+}
+
+input[type="checkbox"]:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+
+
+
+
+ /* --------------------------
+------ ANIMATION ---------
+---------------------------- */
+
+
+/* ADD SUPPORT FOR SMOOOOOOOTH SCROLLIN */
+
+html {
+scroll-behavior: smooth;
+}
+/* ON SCROLL TRIGGERED ANIMATION */
+.observe-me {
+    opacity: 0;
+    transition: all 1s ease-out .5s;
+  }
+  .observe-me[data-viewstate="active"] {
+    opacity: 1;
+  }
+  
+  .animate-from-left {
+    translate: -20px 0;
+  }
+  .animate-from-left[data-viewstate="active"] {
+    translate: 0 0;
+  }
+  
+  .animate-from-right {
+    translate: 20px 0;
+  }
+  .animate-from-right[data-viewstate="active"] {
+    translate: 0 0;
+  }
+  
+  .zoomup {
+    scale: 0;
+  }
+  .zoomup[data-viewstate="active"] {
+    scale: 1;
+  }
