@@ -436,12 +436,14 @@ a {
 /* HIDE MENU BUTTON IF NOT USING TOGGLE NAV */
 .site-menu-button {
 display: none;
+
 }
 
 .toggle-menu {
 
 /* SET TOGGLE MENU COLORS */
 color: var(--color-togglemenu-text);
+
 
 
 display: flex;
