@@ -140,12 +140,7 @@ CSS TABLE OF CONTENTS
     /* TYPOGRAPHIC SCALE */
 
         .hero h1 {
-            font-size: 3em;
-            margin:0;
-        }
-
-        .hero p {
-            font-size: 3.5em;
+            font-size: 4em;
         }
         h1 {
 
@@ -193,53 +188,6 @@ CSS TABLE OF CONTENTS
             position: absolute;
             top: -9999px;
             left: -9999px;
-}
-
-
-
-.bottomleft {
-    position: fixed;
-    bottom: 8px;
-    left: 16px;
-    font-size: 18px;
-    padding: 16px;
-}
-.topleft {
-    position: fixed;
-    top: 8px;
-    left: 16px;
-    font-size: 18px;
-    padding: 16px;
-}
-.topright {
-    position: fixed;
-    top: 8px;
-    right: 16px;
-    font-size: 18px;
-    padding: 16px;
-}
-.bottomright {
-    position: fixed;
-    bottom: 8px;
-    right: 16px;
-    font-size: 18px;
-    padding: 16px;
-}
-
-.rightaligned {
-    text-align: right;
-
-}
-
-.stacked-title {
-    display: block;
-    font-size: 3em; /* Adjust font size as needed */
-  
-}
-.centered {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 
@@ -436,14 +384,12 @@ a {
 /* HIDE MENU BUTTON IF NOT USING TOGGLE NAV */
 .site-menu-button {
 display: none;
-
 }
 
 .toggle-menu {
 
 /* SET TOGGLE MENU COLORS */
 color: var(--color-togglemenu-text);
-
 
 
 display: flex;
@@ -494,42 +440,40 @@ font-size: inherit;
 }
 
 .site-menu {
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 50;
-    background-color: var(--color-togglemenu-background);
-    width: 100%;
-    min-height: 100svh;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 3vw;
-    transition: .4s all ease-out;
+position: fixed;
+top: 0;
+right: 0;
+z-index: 50;
+background-color: var(--color-togglemenu-background);
+width: 100%;
+min-height: 100svh;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+font-size: 3vw;
+transition: .4s all ease-out;
 
-    a {
-        padding: 2vh 2vw;
-        color: var(--color-togglemenu-text);
-    }
+a {
+    padding: 2vh 2vw;
+    color: var(--color-togglemenu-text);
+}
 }
 
 &[data-menustate="open"] {
 
-    /* CHANGE COLORS TO TOGGLE MENU COLORS WHEN OPEN */
-    --color-siteheader-links: var(--color-togglemenu-text);
+/* CHANGE COLORS TO TOGGLE MENU COLORS WHEN OPEN */
+--color-siteheader-links: var(--color-togglemenu-text);
 
-    /* LOGO STAYS WHEN MENU IS OPEN< GET RID OF ME IF YOU DON'T WANT IT */
-    .site-menu-button {
-        position: fixed;
-        z-index: 100;
-    }
+/* LOGO STAYS WHEN MENU IS OPEN< GET RID OF ME IF YOU DON'T WANT IT */
+.site-menu-button {
+    position: fixed;
+    z-index: 100;
+}
 
-    /* SHOW THE SITE MENU WHEN OPEN */
-    .site-menu {
-        transform: translateX(0);
-    }
-
-
+/* SHOW THE SITE MENU WHEN OPEN */
+.site-menu {
+    transform: translateX(0);
+}
 
 /* ANIMATE THE NAVICON + HAMBURGER ICON */
 .site-menu-button svg {
@@ -595,6 +539,12 @@ z-index: 100;
 }
 
 
+/* SITE MAIN */
+.site-main {
+
+}
+
+
 /* SECTIONS */
 
 section {
@@ -613,7 +563,6 @@ h1, h2, h3 {
     color: var(--color-hero-headings);
 }
 }
-
 
 
 /* SITE FOOTER */
@@ -687,23 +636,6 @@ a {
 
 
  /* --------------------------
------- SIMPLE CARD ---------
----------------------------- */
-
-.centered-card-group {
-    display: flex;
-    justify-content: center;
-    gap: var(--unit-small);
-
-    .centered-card {
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        padding:var(--unit-small);
-    }
-}
-
-
- /* --------------------------
 ------ ANIMATION ---------
 ---------------------------- */
 
@@ -713,32 +645,3 @@ a {
 html {
 scroll-behavior: smooth;
 }
-/* ON SCROLL TRIGGERED ANIMATION */
-.observe-me {
-    opacity: 0;
-    transition: all 1s ease-out .5s;
-  }
-  .observe-me[data-viewstate="active"] {
-    opacity: 1;
-  }
-  
-  .animate-from-left {
-    translate: -20px 0;
-  }
-  .animate-from-left[data-viewstate="active"] {
-    translate: 0 0;
-  }
-  
-  .animate-from-right {
-    translate: 20px 0;
-  }
-  .animate-from-right[data-viewstate="active"] {
-    translate: 0 0;
-  }
-  
-  .zoomup {
-    scale: 0;
-  }
-  .zoomup[data-viewstate="active"] {
-    scale: 1;
-  }
