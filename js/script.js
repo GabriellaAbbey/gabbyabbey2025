@@ -18,4 +18,3 @@ toggleMenuLinks.forEach((el) => {
     toggleMenu.setAttribute('data-menustate','closed');
   }
 });
-

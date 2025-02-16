@@ -379,14 +379,19 @@ a {
 
 }
 
+
 /* TOGGLE MENU */
 
 /* HIDE MENU BUTTON IF NOT USING TOGGLE NAV */
+
 .site-menu-button {
 display: none;
 }
 
+@media (max-width:768px) {
+
 .toggle-menu {
+
 
 /* SET TOGGLE MENU COLORS */
 color: var(--color-togglemenu-text);
@@ -398,108 +403,113 @@ align-items: center;
 
 /* SHOW MENU BUTTON IF USING TOGGLE NAV */
 .site-menu-button {
-display: block;
-background-color: transparent;
-border: 1px solid var(--color-siteheader-links);
-color: var(--color-siteheader-links);
-padding: .5em;
-position: relative;
-z-index: 100;
-transition: .4s all ease-out;
+    display: block;
+    background-color: transparent;
+    border: 1px solid var(--color-siteheader-links);
+    color: var(--color-siteheader-links);
+    padding: .5em;
+    position: relative;
+    z-index: 100;
+    transition: .4s all ease-out;
 
-/* RESET BUTTON FONT SIZE TO SAME AS SITE HEADER NAV */
-font-size: inherit;
-
-&:hover {
-    cursor: pointer;
-}
-
-&:has(svg) {
+    /* RESET BUTTON FONT SIZE TO SAME AS SITE HEADER NAV */
+    font-size: inherit;
     
-    /* VERTICALLY ALIGN AND ADD GAP */
-    display: flex;
-    align-items: center;
-    gap: calc(var(--unit-small) / 2);
-
-    /* REMOVE BORDER */
-    border: none;
-
-    /* SET SVG COLOR */
-    svg {
-        fill: var(--color-siteheader-links);
+    &:hover {
+        cursor: pointer;
     }
 
-    /* ADD SUPPORT FOR SVG ANIMATION */
-    svg > * {
-        transition: .2s all ease-out;
-        transform-origin: center;
-    }
+    &:has(svg) {
+        
+        /* VERTICALLY ALIGN AND ADD GAP */
+        display: flex;
+        align-items: center;
+        gap: calc(var(--unit-small) / 2);
 
-}
+        /* REMOVE BORDER */
+        border: none;
+
+        /* SET SVG COLOR */
+        svg {
+            fill: var(--color-siteheader-links);
+        }
+
+        /* ADD SUPPORT FOR SVG ANIMATION */
+        svg > * {
+            transition: .2s all ease-out;
+            transform-origin: center;
+        }
+
+    }
 
 }
 
 .site-menu {
-position: fixed;
-top: 0;
-right: 0;
-z-index: 50;
-background-color: var(--color-togglemenu-background);
-width: 100%;
-min-height: 100svh;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-font-size: 3vw;
-transition: .4s all ease-out;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 50;
+    background-color: var(--color-togglemenu-background);
+    width: 100%;
+    min-height: 100svh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vw;
+    transition: .4s all ease-out;
 
-a {
-    padding: 2vh 2vw;
-    color: var(--color-togglemenu-text);
-}
+    a {
+        padding: 2vh 2vw;
+        color: var(--color-togglemenu-text);
+    }
 }
 
 &[data-menustate="open"] {
 
-/* CHANGE COLORS TO TOGGLE MENU COLORS WHEN OPEN */
---color-siteheader-links: var(--color-togglemenu-text);
+    /* CHANGE COLORS TO TOGGLE MENU COLORS WHEN OPEN */
+    --color-siteheader-links: var(--color-togglemenu-text);
 
-/* LOGO STAYS WHEN MENU IS OPEN< GET RID OF ME IF YOU DON'T WANT IT */
-.site-menu-button {
-    position: fixed;
-    z-index: 100;
-}
+    /* LOGO STAYS WHEN MENU IS OPEN< GET RID OF ME IF YOU DON'T WANT IT */
+    .site-menu-button {
+        position: fixed;
+        z-index: 100;
+    }
 
-/* SHOW THE SITE MENU WHEN OPEN */
-.site-menu {
-    transform: translateX(0);
-}
+    /* SHOW THE SITE MENU WHEN OPEN */
+    .site-menu {
+        transform: translateX(0);
+    }
 
-/* ANIMATE THE NAVICON + HAMBURGER ICON */
-.site-menu-button svg {
-   
-    .simple-navicon-top {
-        transform: translate(-21%, 25%) rotate(45deg);
+    /* ANIMATE THE NAVICON + HAMBURGER ICON */
+    .site-menu-button svg {
+       
+        .simple-navicon-top {
+            transform: translate(-21%, 25%) rotate(45deg);
+        }
+        .simple-navicon-middle {
+            opacity: 0;
+        }
+        .simple-navicon-bottom {
+            /* OLD SCHOOL VERSION */
+            transform: translate(-21%, -25%) rotate(-45deg);
+        }
     }
-    .simple-navicon-middle {
-        opacity: 0;
-    }
-    .simple-navicon-bottom {
-        /* OLD SCHOOL VERSION */
-        transform: translate(-21%, -25%) rotate(-45deg);
-    }
-}
 
 }
 
 &[data-menustate="closed"] {
 
-/* MOVE THE SIDE MENU TO THE RIGHT WHEN CLOSED */
-.site-menu {
-    transform: translateX(100%);
+    /* MOVE THE SIDE MENU TO THE RIGHT WHEN CLOSED */
+    .site-menu {
+        transform: translateX(100%);
+    }
 }
 }
 }
+
+
+
+/* //////////////////////////////////////////////////////////// */
 
 /* IF TOGGLE MENU DISPLAY LOGO ON LEFT AND MENU ON RIGHT ON ALL SCREENS */
 .site-header:has(.toggle-menu) {
@@ -537,6 +547,19 @@ z-index: 100;
 }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* SITE MAIN */
