@@ -6,13 +6,18 @@
     <title>Simple Base</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
 </head>
 <body>
 
     <header class="site-header on-top-of-hero">
         <div class="site-logo">
-            <a href="index.html">
-               <p>Gabby Abbey</p>
+            <a class="topleft" href="index.html">
+               <img src="/img/logo.svg" alt="Gabby Abbey">
             </a>
             <h1 class="hide-visually"><a href="index.html">Gabby Abbey portfolio</a></h1>
         </div>
@@ -26,82 +31,120 @@
                 </svg>
             </button>
             <ul class="site-menu">
-                <li><a href="index.html">Projects</a></li>
-                <li><a href="products.html">Contact</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#section1">Go to Section 1</a></li>
+                <li><a class="topright2" href="index.html">Projects</a></li>
+                <li><a class="topright" href="products.html">About</a></li>
+                <li><a class="bottomright" href="products.html">Instagram</a></li>
+                <li><a class="bottomright2" href="products.html">LinkedIn</a></li>
             </ul>
         </nav>
     </header>
 
 
     <main class="site-main">
-        <section class="hero">
-            <div class="container">
-                <div class="row swapped">
-
-                    <div class="one-half">
-                        <img src="img/placeholder-2000x1500.png" alt="hero image placeholder" width="2000" height="1500">
-                    </div>
-
-                    <div class="one-half">
-                        <h1> Hero Headline</h1>
+        <section class="hero ">
+            <div class="container centered">
+                <div class="rowx">
+                    <div class="one-halfx">
+                        <h1>Welcome!</h1>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.ß Dolorem accusamus ex quas itaque cumque doloremque exercitationem. Ad itaque soluta iure fuga laboriosam molestias nesciunt enim dolore. Sequi nobis libero fuga!
+                            We loooooooove  design.
                         </p>
-                        <a href="#" class="button light"> Default Button</a>
-                        <a href="#section1" class="button light">Go to Section 1</a>
+                        <a href="#section1" class="button light"> Scroll down to view my selected works :)</a>
                     </div>
                 
                 </div>
             </div>
         </section>
-        <section id="section1">
+
+        
+        <section id="works">
             <div class="container">
                 <div class="row">
-
                     <div class="one-half">
-                        <img src="img/placeholder-2000x1500.jpg" alt="placeholder image" width="2000" height="1500">
+                        <h1>Selected works</h1>
+                        <p>Want to view ALL my work? </p>
+                        <a href="#" class="button dark"> Check out my projects page</a>
                     </div>
+               </div>
+            </div>
+        </section>
 
-                    <div class="one-half">
-                        <h1>This is a heading</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque numquam, illo quidem ipsam quae, amet animi suscipit cumque voluptatum est sunt soluta fuga id ad temporibus eum harum vero nemo! <a href="#">This is a link!</a></p>
-                        <a href="#" class="button dark"> Default Button</a>
-                        <a href="#" class="button dark"> Default Button</a>
+        <section>
+           
+            <div class="scroll-container">
+                <div class="scroll-section img1" data-slide="0">
+                    <div class="project-info">
+                        <h1 class="title top-left"> Frenzi Seafood Festival </h1>
+                        <h2 class="project-type"> Branding</h2>
+                        <h3 class="apps"> Illustrator</h3>
                     </div>
+                    
+                
+                </div>
+                
+                <div class="scroll-section img2" data-slide="1">
+                  
+                    <p>ByeBye</p>
                
                 </div>
-            </div>
+                
+                <div class="scroll-section img3" data-slide="2">
+             
+                    <p>woowhoooo</p>
+            
+                </div>
+                
+                <div class="scroll-section" data-slide="3">
+            
+                    <p>Slay we did it</p>
+            
+                </div>
+              </div>
+            
+              <div class="background-image tint"></div>
+
+
+
+
+
+
+                      <!-- <div>                       
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                <div class="swiper-slide img1">
+                                    <div class="container-general">
+                                        <p>Hihi</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide img2">
+                                    <div class="container-general">
+                                        <p>ByeBye</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide img3">
+                                    <div class="container-general">
+                                    <p>woowhoooo</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div style="text-align: center;">
+                                    <p>Slay we did it</p>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="floating-icon">+</div>
+                            
+                            <div class="background-image">
+                            
+                            </div>
+                            
+                            </div> -->
         </section>
 
-        <section>
+        <section id="about">
             <div class="container">
-                <div class="row swapped">
-                    <div class="one-half">
-                        <img src="img/placeholder-2000x1500.svg" alt="placeholder image" width="2000" height="1500">
-                    </div>
-                    <div class="one-half">
-                        <h1>This is a heading</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque numquam, illo quidem ipsam quae, amet animi suscipit cumque voluptatum est sunt soluta fuga id ad temporibus eum harum vero nemo!</p>
-                    </div>
-                    
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="container">
-                <div class="row swapped">
-                    <div class="one-half centered">
-                        <img src="img/placeholder-2000x1500.gif" alt="placeholder image" width="2000" height="1500">
-                    </div>
-                    <div class="one-half centered">
-                        <h1>This is a heading</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque numquam, illo quidem ipsam quae, amet animi suscipit cumque voluptatum est sunt soluta fuga id ad temporibus eum harum vero nemo!</p>
-                    </div>
-                    
-                </div>
+                ///Lord please let this test work////
             </div>
         </section>
 
@@ -134,6 +177,7 @@
 
 
 <!-- MAIN JS FILE-->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
