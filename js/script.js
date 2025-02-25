@@ -18,6 +18,8 @@ toggleMenuLinks.forEach((el) => {
     toggleMenu.setAttribute('data-menustate','closed');
   }
 });
+
+
 // BACKGROUND COLOR CHANGE JS WITH NO SWIPER
 const sections = document.querySelectorAll('.scroll-section');
 const backgroundImage = document.querySelector('.background-image');
@@ -27,6 +29,10 @@ const observer = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             const slideNumber = entry.target.dataset.slide;
             backgroundImage.setAttribute('data-currentslide', slideNumber);
+            entry.target.setAttribute('data-visible', 'visible');
+        }
+        else {
+          entry.target.setAttribute('data-visible', 'hidden');
         }
     });
 }, {

@@ -59,7 +59,7 @@ CSS TABLE OF CONTENTS
         --color-links-light: rgb(90, 169, 198);
         --color-links-lighter: rgb(255 255 255);
 
-        --color-siteheader-background: transparent;
+        --color-siteheader-background: rgb(255 255 255) ;
         --color-siteheader-links: var(--color-text-headings);
 
         --color-hero-background:rgb(255 255 255);
@@ -240,6 +240,39 @@ CSS TABLE OF CONTENTS
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+
+
+        @media (min-width: 768px) {
+            .topright-desktop {
+                position: fixed;
+                top: 8px;
+                right: 16px;
+                font-size: 18px;
+                padding: 16px;
+            }
+            .topright2-desktop {
+                position: fixed;
+                top: 8px;
+                right: 120px;
+                font-size: 18px;
+                padding: 16px;
+            }
+            
+            .bottomright-desktop {
+                position: fixed;
+                bottom: 8px;
+                right: 16px;
+                font-size: 18px;
+                padding: 16px;
+            }
+            .bottomright2-desktop {
+                position: fixed;
+                bottom: 8px;
+                right: 120px;
+                font-size: 18px;
+                padding: 16px;
+            }
         }
 
 
@@ -717,6 +750,10 @@ a {
     color: var(--color-project-info);
 }
 
+.project-info {
+    position: absolute;
+}
+
 
 
 
@@ -789,37 +826,77 @@ footer {
   
 }
 
-@media (max-width: 600px) { 
+@media (max-width: 768px) { 
   .scroll-container {
     padding: 0;
     margin: 0;
     width: 100%;
+   
   }
 }
 
 /* Change from swiper-slide to scroll-section */
 .scroll-section {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   background: #fff;
   text-align: center;
   height: 80vh;
   margin: 10rem 0; 
-  padding-bottom: 10px;
   z-index: 0;
   border-radius: 2px;
-  box-shadow: 5px 5px 10px rgba(33, 15, 52, 0.327) ;
+  box-shadow: 5px 5px 10px rgba(33, 15, 52, 0.327);
+  
+  
+  
+  @media (min-width: 768px) {
+    height: 100%;
+    width: 100%;
+  }
+  
+}
+.scroll-section[data-visible="visible"] {
+    animation: scroll-animatein .8s cubic-bezier(.14,.84,.18,1.12) forwards;
+    border: 5px solid red;
 }
 
-/* Keep your background classes */
-.img1 {
-  background-image: url(../img/frenzi_wall.png);
-  background-size: cover;
+@keyframes scroll-animatein {
+    0% {
+        opacity: 0;
+        scale:0;
+    }
+    100% {
+        opacity: 1;
+        scale:1;
+    }
 }
+
+/* This is card color/background image*/
+.img1 {
+  background-color: pink;
+
+}
+
+.image-wrapper {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+}
+
+/* Make the image cover the entire area */
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 
 .img2 {
-    background-image: url(../img/pv_helmets.png);
+    background-color: teal;
     background-size: cover;
 }
 
@@ -855,106 +932,57 @@ footer {
 .background-image[data-currentslide='2'] { background-color: orange; }
 .background-image[data-currentslide='3'] { background-color: blue; }
 
+/* --------------------------- */
+/* --------------------------- */
+/* ------SUB SECTIONS--------- */
+/* --------------------------- */
+/* --------------------------- */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ----------------------------
---------BACKGROUND COLOR WITH SWIPER CSS---------
------------------------------- */
-/* 
-body {
- 
-  overflow: hidden;
+.subhero {
+    img {
+        width: 100svh;
+        border: 1px solid red;
+    }
 }
 
+/* Main Grid Layout */
 
-.swiper-container {
-  width: 100%;
-  height: 100vh;
-  padding: 100px;
-
+.subcontainer {    
+    display: grid;
+    /* grid-template-columns: 1fr; */
+    grid-template-rows: auto;
+    gap: 10px;
+    /* width: 100vw; */
+    /* height: 100vh;  */
 }
 
-@media (max-width: 600px) { 
-  .swiper-container {
-      padding: 0;
-      margin:0;
-  }
-
+/* Styling for the 2x2 images */
+.subcontainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: #ddd;
 }
 
-.swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #fff;
-  text-align:center;
-   
+/* Make full-width images span two columns */
+.full-width {
+        grid-column: span 2;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
   
 }
 
-.container-general {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.img1 {
-  background-color: pink;
-}
-.img2 {
-  background-color: orange;
-}
-.img3 {
-  background-color: yellow;
+/* Responsive Layout for Mobile */
+@media (max-width: 768px) {
+    .subcontainer {
+        grid-template-columns: 1fr; /* Stack everything */
+        grid-auto-rows: auto; /* Adjust row heights */
+    }
+
+    .subcontainer img {
+        height: auto; /* Let images scale naturally */
+    }
 }
 
 
-
-
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-.floating-icon {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  font-size: 40px;
-  animation: float 3s ease-in-out infinite;
-  z-index: 1000;
-}
-
-.background-image {
-  background-color: purple;
-  position:fixed;
-  top: 0;
-  left:0;
-  width: 100%;
-  height:100%;
-  z-index: -1;
-  transition: all 1s linear;
-}
-.background-image[data-currentslide='0'] { background-color:green;}
-.background-image[data-currentslide='1'] { background-color:pink;}
-.background-image[data-currentslide='2'] { background-color:orange;}
-.background-image[data-currentslide='3'] { background-color:blue;} */
