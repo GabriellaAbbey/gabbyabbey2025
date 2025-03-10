@@ -39,39 +39,47 @@ const observer = new IntersectionObserver((entries) => {
     threshold: 0.5
 });
 
+
+
+
 sections.forEach(section => {
     observer.observe(section);
 });
 
-// BACKGROUND COLOR CHANGE JS WITH SWIPER
 
-  
-// const swiper = new Swiper('.swiper-container', {
-//     direction: 'vertical',
-//     spaceBetween: 100,
-//     mousewheel: true,
-//     keyboard: {
-//         enabled: true,
-//         onlyInViewport: false
-//     },
-//     effect: 'slides',
-//     coverflowEffect: {
-//         rotate: 50,
-//         stretch: 0,
-//         depth: 100,
-//         modifier: 1,
-//         slideShadows: true,
-//     },
-//     speed: 1000,
-//     pagination: {
-//         el: '.swiper-pagination',
-//         clickable: true,
-//     },
-// });
 
-// const backgroundImage = document.querySelector(".background-image");
 
-// swiper.on('slideChange', function () {
-// console.log(swiper.activeIndex);
-// backgroundImage.setAttribute("data-currentslide", swiper.activeIndex);
-// });
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Get all button elements with the class '.rotate-button'
+  const buttons = document.querySelectorAll('.rotate-button');
+
+  // Ensure there are buttons before adding event listeners
+  if (buttons.length === 0) {
+      console.error("No buttons with class '.rotate-button' found.");
+      return;
+  }
+
+  // Set a scroll threshold where animation will trigger (%)
+  const scrollThreshold = 5;
+
+  // Add scroll event listener
+  window.addEventListener('scroll', function() {
+      // Calculate scroll percentage
+      const scrollPercentage = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+
+      // Debugging: Log the scroll percentage
+      console.log(`Scroll Percentage: ${scrollPercentage.toFixed(2)}%`);
+
+      // Loop through all buttons and apply/remove the class
+      buttons.forEach(button => {
+          if (scrollPercentage >= scrollThreshold) {
+              button.classList.add('animate-rotation');
+          } else {
+              button.classList.remove('animate-rotation');
+          }
+      });
+  });
+});

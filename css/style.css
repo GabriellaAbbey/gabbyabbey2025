@@ -148,7 +148,7 @@ CSS TABLE OF CONTENTS
         h1 {
 
             /* SET H1 FONT SIZE */
-            font-size: 3em;
+            font-size: 6em;
 
             /* SET H1 LEADING */
             line-height: 1;
@@ -172,7 +172,7 @@ CSS TABLE OF CONTENTS
         }
 
         p {
-            max-width: 65ch;
+            /* max-width: 65ch; */
             text-wrap: pretty;
         }
 
@@ -272,6 +272,25 @@ CSS TABLE OF CONTENTS
                 right: 120px;
                 font-size: 18px;
                 padding: 16px;
+            }
+        }
+
+        
+        .rotate-button {
+      
+        }
+
+       .animate-rotation {
+        animation: rotato .8s forwards;
+       }
+
+        @keyframes rotato {
+            0% {
+                transform: rotate(0deg) 
+            }
+            100% {
+                transform: rotate(90deg) 
+               
             }
         }
 
@@ -399,6 +418,7 @@ CSS TABLE OF CONTENTS
 /* SITE HEADER */
 .site-header {
 background-color: var(--color-siteheader-background);
+z-index: 2;
 
 /* PUT ALL HEADER CHILDREN SIDE-BY-SIDE AND VERT CENTERED ON LARGE SCREENS */
 @media (min-width: 768px) {
@@ -442,6 +462,7 @@ a {
 
 /* SITE-NAV */
 .site-header-nav {
+ 
 
 ul {
     /* REMOVE MARGINS & BULLETS FROM LIST */
@@ -661,6 +682,8 @@ padding: var(--unit-large) var(--unit-small);
 background-color: var(--color-hero-background);
 color: var(--color-hero-text);
 height: 100svh;
+position: relative;
+z-index: 1;
 
 /* ADDING MORE SPACEON ON ABSOLUTE HEADER */
 padding-top: calc(4em + var(--unit-large));
@@ -752,7 +775,47 @@ a {
 
 .project-info {
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    /* border: 3px solid yellow; */
+    text-align: left;
+    padding: 2em;
+
 }
+.project-info .title {
+/*    
+    border: 1px solid red; */
+    grid-column: span 2;
+ 
+}
+
+.title {
+    font-size: 4ch;
+    
+}
+@media (max-width: 768px) {
+    .title {
+        font-size: 3em;
+    }
+}
+
+
+.project-info .project-type {
+    align-self: end;
+
+}
+.project-info .apps {
+
+ align-self: end;
+ justify-self: end;   
+ text-align: right;
+}
+
 
 
 
@@ -843,7 +906,7 @@ footer {
   align-items: center;
   background: #fff;
   text-align: center;
-  height: 80vh;
+  /* height: 80vh; */
   margin: 10rem 0; 
   z-index: 0;
   border-radius: 2px;
@@ -851,21 +914,32 @@ footer {
   
   
   
-  @media (min-width: 768px) {
-    height: 100%;
-    width: 100%;
+  
+ 
+}
+
+
+@media (max-width: 460px) {
+    title {
+        font-size: 3em;
+    }
+
   }
   
-}
+
+
+
+
 .scroll-section[data-visible="visible"] {
     animation: scroll-animatein .8s cubic-bezier(.14,.84,.18,1.12) forwards;
-    border: 5px solid red;
+    /* border: 5px solid red; */
 }
+
 
 @keyframes scroll-animatein {
     0% {
         opacity: 0;
-        scale:0;
+        scale:.8;
     }
     100% {
         opacity: 1;
@@ -884,6 +958,7 @@ footer {
     height: 100%;
     display: block;
     overflow: hidden;
+ 
 }
 
 /* Make the image cover the entire area */
@@ -905,7 +980,7 @@ footer {
 }
 
 .background-image {
-  background-color: purple;
+  /* background-color: purple; */
   position: fixed;
   top: 0;
   left: 0;
@@ -924,10 +999,12 @@ footer {
 /* Background colors */
 
 .tint {
-    background-color: rgba(19, 7, 38, 0.201);
-    background-blend-mode:hard-light;
+    background-color: rgba(21, 5, 65, 0.223);
+    background-blend-mode: multiply;
 }
-.background-image[data-currentslide='0'] { background-image: url(../img/frenzi_wall.png) }
+
+
+.background-image[data-currentslide='0'] { background-image: url(../img/Frenzi/frenzihero.png)}
 .background-image[data-currentslide='1'] { background-image: url(../img/pv_helmets.png) }
 .background-image[data-currentslide='2'] { background-color: orange; }
 .background-image[data-currentslide='3'] { background-color: blue; }
@@ -939,21 +1016,24 @@ footer {
 /* --------------------------- */
 
 .subhero {
+    border: 1px solid blue;
     img {
-        width: 100svh;
-        border: 1px solid red;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        background-color: #000000;
+      
     }
 }
 
-/* Main Grid Layout */
+
+
+/* SUBSECTION GRID LAYOUT */
 
 .subcontainer {    
     display: grid;
-    /* grid-template-columns: 1fr; */
     grid-template-rows: auto;
     gap: 10px;
-    /* width: 100vw; */
-    /* height: 100vh;  */
 }
 
 /* Styling for the 2x2 images */
