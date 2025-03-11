@@ -276,10 +276,7 @@ CSS TABLE OF CONTENTS
         }
 
         
-        .rotate-button {
-      
-        }
-
+    
        .animate-rotation {
         animation: rotato .8s forwards;
        }
@@ -666,9 +663,6 @@ z-index: 100;
 
 
 /* SITE MAIN */
-.site-main {
-
-}
 
 
 /* SECTIONS */
