@@ -123,7 +123,7 @@ h3 {
 
 a {
     /* SET THE COLOR OF ALL TEXT LINKS */
-    color: var(--color-links);
+    /* color: var(--color-links); */
 
     /* THIS IS A NEST HOVER STATE */
     &:hover {
@@ -170,8 +170,21 @@ h3 {
 /* TYPOGRAPHIC SCALE */
 
 .hero h1 {
+    text-align: left;
     font-size: 4em;
 }
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3.5em;
+        padding: .1em;
+    }
+
+    .hero a {
+        padding-left: .5em;
+    }
+}
+
 
 h1 {
 
@@ -284,6 +297,7 @@ img {
     right: 8px;
     font-size: .875em;
     border: 1px solid red;
+    color: #ba0c0c;
 }
 
 .bottomright-desktop {
@@ -305,6 +319,14 @@ img {
         bottom: 8px;
         right: 16px;
         font-size: 1.125em
+    }
+}
+
+@media (max-width: 768px) {
+    .bottomright-desktop svg {
+        width: 80%;
+        border: 1px solid red;
+
     }
 
 }
@@ -338,6 +360,7 @@ img {
     /* writing-mode: vertical-lr; */
     animation: rotato-botto .8s forwards;
     transform-origin: right top;
+
 }
 
 @keyframes rotato-botto {
@@ -362,12 +385,35 @@ img {
     }
 }
 
-/* .topright-desktop.animate-rotation {
-    transform-origin: right top;
-    translate: 0 300%;
-    transition: .2s all ease-out;
-} */
+/* New animation ONLY for the .bottomright-desktop list items */
+.bottomright-desktop li {
+    transition: transform 0.8s;
+    transform-origin: center;
+}
 
+.bottomright-desktop.animate-rotation li {
+    animation: rotate-item 0.8s forwards;
+    animation-delay: calc(var(--item-index, 0) * 0.1s);
+    /* Staggered animation */
+}
+
+@keyframes rotate-item {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    51% {
+        transform: rotate(-90deg);
+    }
+
+    100% {
+        transform: rotate(-90deg);
+    }
+}
 
 /* --------------------------
 ---------LAYOUT--------------
@@ -576,7 +622,10 @@ body {
     order: 1;
 }
 
-
+.mix {
+    mix-blend-mode: difference;
+    z-index: 4;
+}
 
 
 /* --------------------------
@@ -589,6 +638,7 @@ body {
     background-color: var(--color-siteheader-background);
     z-index: 2;
 
+
     /* PUT ALL HEADER CHILDREN SIDE-BY-SIDE AND VERT CENTERED ON LARGE SCREENS */
     @media (min-width: 768px) {
         display: flex;
@@ -597,11 +647,14 @@ body {
     }
 
     /* ADD SOME GENERAL SPACING AROUND THE HEADER */
-    padding: var(--unit-small);
+    /* padding: var(--unit-small); */
+    padding: 0;
 
     /* REMOVE LINK UNDERLINES IN HEADER */
     a {
         text-decoration: none;
+        color: rgb(255, 255, 255);
+
     }
 
     /* SITE LOGO */
@@ -624,6 +677,7 @@ body {
         img,
         svg {
             display: block;
+
         }
 
 
@@ -661,8 +715,10 @@ body {
 /* HIDE MENU BUTTON IF NOT USING TOGGLE NAV */
 
 .site-menu-button {
+
     display: none;
 }
+
 
 @media (max-width:768px) {
 
@@ -811,7 +867,7 @@ body {
 
         /* SET SITE HEADER LINK COLOR ON LARGE SCREENS */
         a {
-            color: var(--color-siteheader-links);
+            /* color: var(--color-siteheader-links); */
         }
 
         /* ADD MORE SPACE ON TOP FOR THE ABSOLUTE HEADER */
@@ -863,6 +919,13 @@ section {
     h2,
     h3 {
         color: var(--color-hero-headings);
+    }
+}
+
+
+@media (max-width: 715px) {
+    .hero {
+        text-align: left;
     }
 }
 
