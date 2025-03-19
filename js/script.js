@@ -20,9 +20,46 @@ toggleMenuLinks.forEach((el) => {
 });
 
 
+// // BACKGROUND COLOR CHANGE JS WITH NO SWIPER
+// const sections = document.querySelectorAll('.scroll-section');
+// const backgroundImage = document.querySelector('.background-image');
+
+// const observer = new IntersectionObserver((entries) => {
+//   entries.forEach(entry => {
+//     if (entry.isIntersecting) {
+//       const slideNumber = entry.target.dataset.slide;
+//       backgroundImage.setAttribute('data-currentslide', slideNumber);
+//       entry.target.setAttribute('data-visible', 'visible');
+//     }
+//     else {
+//       entry.target.setAttribute('data-visible', 'hidden');
+//     }
+//   });
+// }, {
+//   threshold: .5
+// });
+
+
+
+
+// sections.forEach(section => {
+//   observer.observe(section);
+// });
+
+
+
+// sections.forEach(section => {
+//   section.setAttribute('data-visible', 'hidden');
+// });
+
 // BACKGROUND COLOR CHANGE JS WITH NO SWIPER
 const sections = document.querySelectorAll('.scroll-section');
 const backgroundImage = document.querySelector('.background-image');
+
+// Make sure all sections start with opacity 0 and hidden state
+sections.forEach(section => {
+  section.setAttribute('data-visible', 'hidden');
+});
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -30,17 +67,14 @@ const observer = new IntersectionObserver((entries) => {
       const slideNumber = entry.target.dataset.slide;
       backgroundImage.setAttribute('data-currentslide', slideNumber);
       entry.target.setAttribute('data-visible', 'visible');
-    }
-    else {
+    } else {
       entry.target.setAttribute('data-visible', 'hidden');
     }
   });
 }, {
-  threshold: 0.5
+  threshold: 0.5,
+  rootMargin: "-10% 0px" // Adjust when the observer triggers
 });
-
-
-
 
 sections.forEach(section => {
   observer.observe(section);
@@ -52,6 +86,9 @@ sections.forEach(section => {
 
 
 
+
+
+// THIS IS THE ROTATE BUTTON ANIMATION//
 document.addEventListener("DOMContentLoaded", function () {
   // Get all button elements with the class '.rotate-button'
   const buttons = document.querySelectorAll('.rotate-button');
@@ -63,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Set a scroll threshold where animation will trigger (%)
-  const scrollThreshold = 5;
+  const scrollThreshold = 2;
 
   // Add scroll event listener
   window.addEventListener('scroll', function () {
