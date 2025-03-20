@@ -1261,8 +1261,9 @@ footer {
 /* --------------------------- */
 
 .subhero {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     padding: 0;
+
     margin: 0;
 
     img {
@@ -1344,21 +1345,19 @@ footer {
     }
 }
 
-.hihi {
-    border: 1px solid red;
-    padding: 0;
-}
+
 
 /* ////////////////////// */
 /* SUBSECTION GRID LAYOUT */
 /* ////////////////////// */
 
 .subcontainer {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 10px;
+    width: 100%;
 
 }
 
@@ -1367,15 +1366,16 @@ footer {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    background-color: transparent
+    background-color: transparent;
 }
 
 /* Make full-width images span two columns */
 .full-width {
     grid-column: span 2;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
 
 }
 
@@ -1387,6 +1387,10 @@ footer {
     /* Changed from 100svh */
     max-width: 100%;
 
+    .sub-section {
+        max-width: 43ch;
+    }
+
 }
 
 .sub-one-third img {
@@ -1395,6 +1399,9 @@ footer {
     /* Maintain aspect ratio */
     object-fit: cover;
 }
+
+
+
 
 
 
@@ -1409,6 +1416,7 @@ footer {
 
     .subcontainer img {
         height: auto;
+
         /* Let images scale naturally */
     }
 
@@ -1416,40 +1424,66 @@ footer {
         grid-column: span 1;
         width: 100vw;
         height: 100vh;
-        object-fit: cover;
+        object-fit: fill;
 
     }
 
     .sub-one-third-container {
         grid-template-columns: 1fr;
-        /* Stack images in one column */
+
+
     }
-}
 
-/* SPLASH SCREEN UI */
-.splash-screen {
-    position: fixed;
-    z-index: 3;
-    background-color: rgb(0 0 0 / 1);
-    color: white;
-    width: 100%;
-    height: 100svh;
-    display: grid;
-    place-items: center;
-    animation-name: splash-chuck;
-    animation-duration: 1s;
-    animation-timing-function: cubic-bezier(1, -0.01, .72, 1.01);
-    animation-fill-mode: forwards;
-    animation-delay: .6s;
-
-
-
-}
-
-
-/* SPLASH SCREEN ANIMATION */
-@keyframes splash-chuck {
-    100% {
-        translate: 100% 0;
+    .sub-one-third-container .sub-section {
+        display: grid;
+        border: 1px solid red;
+        padding: 0 7em 0 7em;
+        /* max-width: 30ch; */
+        text-align: left;
+        justify-content: center;
     }
-}
+
+    .swapped {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        width: 100%;
+        max-width: 100%;
+        direction: rtl;
+        /* Reverse the grid direction */
+    }
+
+
+    /* LAST NIGHT - I worked on trying to swapp things but it is not working */
+
+    .spacer {
+        padding: var(--unit-small);
+    }
+
+    /* SPLASH SCREEN UI */
+    .splash-screen {
+        position: fixed;
+        z-index: 3;
+        background-color: rgb(0 0 0 / 1);
+        color: white;
+        width: 100%;
+        height: 100svh;
+        display: grid;
+        place-items: center;
+        animation-name: splash-chuck;
+        animation-duration: 1s;
+        animation-timing-function: cubic-bezier(1, -0.01, .72, 1.01);
+        animation-fill-mode: forwards;
+        animation-delay: .6s;
+
+
+
+    }
+
+
+    /* SPLASH SCREEN ANIMATION */
+    @keyframes splash-chuck {
+        100% {
+            translate: 100% 0;
+        }
+    }
