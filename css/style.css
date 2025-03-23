@@ -47,29 +47,29 @@ CSS TABLE OF CONTENTS
 
     /* THESES ARE MY COLORS */
 
-    --color-body-background: rgb(255 255 255);
-    --color-text-body: rgb(0 0 0 / .8);
-    --color-text-headings: rgb(0 0 0 / 1);
-    --color-project-info: rgb(255 255 255);
+    --color-body-background: rgb(244, 243, 235);
+    --color-text-body: var(--color-hero-headings);
+    --color-text-headings: var(--color-hero-headings);
+    --color-project-info: rgb(244, 243, 235);
 
-    --color-links: rgb(130, 24, 153);
-    --color-links-hover: rgba(25, 160, 52, 0.674);
-    --color-text-button-hover: rgba(25, 160, 52, 0.674);
+    --color-links: #3b9c30;
+    --color-links-hover: rgba(0, 0, 0, 0.674);
+    --color-text-button-hover: rgba(0, 4, 1, 0.674);
     --color-links-dark: rgb(102 102 102);
     --color-links-darker: rgb(0 0 0);
     --color-links-light: rgb(90, 169, 198);
     --color-links-lighter: rgb(255 255 255);
 
-    --color-siteheader-background: rgb(255 255 255);
-    --color-siteheader-links: var(--color-text-headings);
+    --color-siteheader-background: rgb(244, 243, 235);
+    --color-siteheader-links: var(--color-hero-headings);
 
-    --color-hero-background: rgb(255 255 255);
-    --color-hero-text: rgba(0, 0, 0, 0.8);
-    --color-hero-headings: rgb(0, 0, 0);
+    --color-hero-background: rgb(244, 243, 235);
+    --color-hero-text: var(--color-hero-headings);
+    --color-hero-headings: #122911;
 
-    --color-sitefooter-background: rgb(100 100 100);
-    --color-sitefooter-text: rgb(255 255 255 / .8);
-    --color-sitefooter-headings: rgb(255 255 255 / 1);
+    --color-sitefooter-background: var(--color-text-headings);
+    --color-sitefooter-text: rgb(244, 243, 235);
+    --color-sitefooter-headings: rgb(244, 243, 235);
     --color-sitefooter-links: rgb(255 255 255);
 
     --color-togglemenu-text: rgb(255, 210, 158);
@@ -492,8 +492,14 @@ body {
 
 }
 
+#works {
+    .row {
+        margin-bottom: var(--gridgap);
+    }
+}
+
 .row>* {
-    margin-bottom: var(--gridgap);
+    /* margin-bottom: var(--gridgap); */
     margin-top: var(--gridgap);
 }
 
@@ -636,6 +642,12 @@ body {
 
 
 /* SITE HEADER */
+.site-header-nav {
+    a {
+        color: #edd6ee;
+    }
+}
+
 .site-header {
     background-color: var(--color-siteheader-background);
     z-index: 2;
@@ -655,7 +667,7 @@ body {
     /* REMOVE LINK UNDERLINES IN HEADER */
     a {
         text-decoration: none;
-        color: rgb(255, 255, 255);
+        /* color: rgb(255, 255, 255); */
 
     }
 
@@ -916,8 +928,12 @@ section {
     text-align: center;
     display: grid;
     place-items: center;
+
     /* ADDING MORE SPACEON ON ABSOLUTE HEADER */
     /* padding-top: calc(4em + var(--unit-large)); */
+    a {
+        color: var(--color-links);
+    }
 
     h1,
     h2,
@@ -938,7 +954,8 @@ section {
 .site-footer {
     background-color: var(--color-sitefooter-background);
     color: var(--color-sitefooter-text);
-    padding: var(--unit-small);
+    padding-bottom: 2em;
+
 
     h1,
     h2,
@@ -950,17 +967,41 @@ section {
         color: var(--color-sitefooter-links)
     }
 
+
     .site-nav {
         ul {
             list-style: none;
             margin: 0;
             padding: 0;
+            padding-left: .4em;
 
         }
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+}
+
+@media (max-width: 768px) {
+    .site-footer {
+        padding-bottom: 3em;
     }
 }
 
+.site-footer {
+    h2 {
+        padding: var(--unit-xs);
 
+    }
+
+    p {
+        padding-bottom: var(--unit-small);
+        padding-left: .4em;
+        max-width: 50ch;
+    }
+}
 
 /* --------------------------
 ------ UI COMPONENTS ---------
@@ -1092,7 +1133,7 @@ body {
 
 #works,
 #about {
-    background-color: white;
+    background-color: var(--color-hero-background);
 }
 
 header {
@@ -1109,7 +1150,7 @@ footer {
     background: teal;
     flex-shrink: 0;
     /* Keeps them at their defined size */
-    height: 30svh;
+    /* height: 30svh; */
     /* Adjust as needed */
 }
 
@@ -1120,7 +1161,47 @@ footer {
 
 .about {
     height: 100svh;
-    background-color: white;
+
+
+}
+
+#about {
+
+    a {
+        color: #3aa22e;
+    }
+
+    h2 {
+        padding: var(--unit-xs);
+
+    }
+
+    p {
+        padding-bottom: var(--unit-small);
+        padding-left: .4em;
+    }
+
+    img {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    padding-bottom: 0;
+}
+
+#works {
+
+
+    h2 {
+        padding-left: .2em;
+
+    }
+
+    a {
+        padding-left: .65em;
+        color: var(--color-links)
+    }
+
 }
 
 /* Change from swiper-container to scroll-container */
@@ -1146,6 +1227,15 @@ footer {
 }
 
 /* Change from swiper-slide to scroll-section */
+
+@media (max-width: 768px) {
+    .scroll-section {
+        margin: 0;
+        padding: 0;
+
+    }
+}
+
 .scroll-section {
     display: flex;
     flex-direction: column;
@@ -1253,6 +1343,21 @@ footer {
 .background-image[data-currentslide='3'] {
     background-color: blue;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* --------------------------- */
 /* --------------------------- */
