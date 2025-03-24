@@ -913,10 +913,15 @@ body {
 /* SECTIONS */
 
 section {
-    padding-bottom: var(--unit-small);
-    padding-top: var(--unit-small);
+    padding: var(--unit-small);
+    /* padding-bottom: var(--unit-small);
+    padding-top: var(--unit-small); */
 
 
+}
+
+.no-pad {
+    padding: 0;
 }
 
 /* HERO SECTION */
@@ -929,6 +934,7 @@ section {
     text-align: center;
     display: grid;
     place-items: center;
+    ;
 
     /* ADDING MORE SPACEON ON ABSOLUTE HEADER */
     /* padding-top: calc(4em + var(--unit-large)); */
@@ -947,6 +953,7 @@ section {
 @media (max-width: 715px) {
     .hero {
         text-align: left;
+        padding-left: 2.5em;
     }
 }
 
@@ -1292,15 +1299,18 @@ footer {
     /* height: 80vh; */
     margin: 20rem 0;
     z-index: 0;
-    box-shadow: 5px 5px 10px rgba(33, 15, 52, 0.327);
-    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.327);
+    border-radius: 11px;
     opacity: 0;
     /* Start with opacity 0 */
     transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
     /* Add smooth transitions */
     transform: scale(0.95);
+
     /* Start slightly smaller */
 }
+
+
 
 .scroll-section img {
     border-radius: 10px;
@@ -1375,19 +1385,20 @@ footer {
 }
 
 .background-image[data-currentslide='0'] {
-    background-image: url(../img/Frenzi/frenzihero.png)
+    background-image: url(../img/Frenzi/frenzihero.png);
 }
 
 .background-image[data-currentslide='1'] {
-    background-image: url(../img/pv_helmets.png)
+    background-image: url(../img/sav/sav_black.png);
 }
 
 .background-image[data-currentslide='2'] {
-    background-color: orange;
+    background-image: url(../img/talk/talk_hero.png);
+
 }
 
 .background-image[data-currentslide='3'] {
-    background-color: blue;
+    background-image: url(../img/pv_helmets.png);
 }
 
 
