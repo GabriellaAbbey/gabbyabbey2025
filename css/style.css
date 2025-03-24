@@ -298,7 +298,7 @@ img {
     top: 8px;
     right: 8px;
     font-size: .875em;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     color: #ba0c0c;
 }
 
@@ -326,8 +326,8 @@ img {
 
 @media (max-width: 768px) {
     .bottomright-desktop svg {
-        width: 80%;
-        border: 1px solid red;
+        /* width: 80%;
+        border: 1px solid red; */
 
     }
 
@@ -461,7 +461,7 @@ body {
 /* GRID */
 /* LARGE SCREENS ONLY */
 @media (min-width: 768px) {
-    .row {
+    .row-main {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         gap: 2em;
@@ -493,7 +493,7 @@ body {
 }
 
 #works {
-    .row {
+    .row-main {
         margin-bottom: var(--gridgap);
     }
 }
@@ -632,7 +632,7 @@ body {
 
 .mix {
     mix-blend-mode: difference;
-    z-index: 4;
+    z-index: 5;
 }
 
 
@@ -649,7 +649,7 @@ body {
 }
 
 .site-header {
-    background-color: var(--color-siteheader-background);
+    background-color: var(--color-hero-background);
     z-index: 2;
 
 
@@ -913,7 +913,8 @@ body {
 /* SECTIONS */
 
 section {
-    padding: var(--unit-small);
+    padding-bottom: var(--unit-small);
+    padding-top: var(--unit-small);
 
 
 }
@@ -955,6 +956,7 @@ section {
     background-color: var(--color-sitefooter-background);
     color: var(--color-sitefooter-text);
     padding-bottom: 2em;
+    padding-top: 2em;
 
 
     h1,
@@ -1165,7 +1167,16 @@ footer {
 
 }
 
+#works {
+    padding-bottom: var(--unit-large);
+}
+
+#projects {
+    padding-top: 6em;
+}
+
 #about {
+    padding-top: 5em;
 
     a {
         color: #3aa22e;
@@ -1189,7 +1200,14 @@ footer {
     padding-bottom: 0;
 }
 
-#works {
+@media (max-width: 768px) {
+    #about {
+        padding-top: 6em;
+    }
+}
+
+#works,
+#projects {
 
 
     h2 {
@@ -1202,6 +1220,34 @@ footer {
         color: var(--color-links)
     }
 
+}
+
+#next {
+    display: flex;
+    justify-content: end;
+    padding: 0 2em 2em 0;
+    text-align: center;
+
+    a {
+        text-decoration: none;
+    }
+
+    h2:hover {
+        color: var(--color-links-hover);
+    }
+
+    h2 {
+        color: #3aa22e;
+
+    }
+}
+
+@media (max-width: 768px) {
+    #next {
+        justify-content: end;
+        padding: 0 2em 2em 0;
+
+    }
 }
 
 /* Change from swiper-container to scroll-container */
@@ -1366,6 +1412,7 @@ footer {
 /* --------------------------- */
 
 .subhero {
+    background-color: var(--color-hero-background);
     /* border: 1px solid blue; */
     padding: 0;
 
@@ -1375,7 +1422,6 @@ footer {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        background-color: #000000;
         padding: 0;
 
     }
@@ -1405,6 +1451,8 @@ footer {
 
     .subhero {
         color: white;
+        /* Adds a semi-transparent black tint */
+
         background-image: url(/img//Frenzi/frenzi_wall_test.png);
 
         background-repeat: no-repeat;
@@ -1419,13 +1467,19 @@ footer {
 
         h1 {
             color: white;
-            padding-top: 3em;
+            padding-top: 2.5em;
+
         }
     }
 }
 
 .hero-text {
     padding-left: 4em;
+
+    h1 {
+
+        max-width: 10ch
+    }
 }
 
 .test {
@@ -1447,6 +1501,11 @@ footer {
 
     h2 {
         padding-bottom: var(--unit-xs);
+        padding-left: .1em;
+    }
+
+    p {
+        padding-left: .3em;
     }
 }
 
@@ -1457,16 +1516,22 @@ footer {
 /* ////////////////////// */
 
 .subcontainer {
-
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-auto-rows: auto;
     gap: 10px;
     width: 100%;
-
+    background-color: var(--color-hero-background);
+    padding: 0;
+    margin: 0;
 }
 
-/* Styling for the 2x2 images */
+/* Row container for each pair */
+.row {
+    display: contents;
+    /* Makes the row container invisible to the grid layout */
+}
+
+/* Styling for the images */
 .subcontainer img {
     width: 100%;
     height: 100%;
@@ -1474,14 +1539,12 @@ footer {
     background-color: transparent;
 }
 
-/* Make full-width images span two columns */
+/* Make full-width elements span two columns */
 .full-width {
     grid-column: span 2;
     width: 100%;
     height: 100%;
     object-fit: contain;
-
-
 }
 
 .sub-one-third-container {
@@ -1492,9 +1555,6 @@ footer {
     /* Changed from 100svh */
     max-width: 100%;
 
-    .sub-section {
-        max-width: 43ch;
-    }
 
 }
 
@@ -1507,88 +1567,93 @@ footer {
 
 
 
-
-
-
 /* Responsive Layout for Mobile */
 @media (max-width: 768px) {
     .subcontainer {
         grid-template-columns: 1fr;
-        /* Stack everything */
         grid-auto-rows: auto;
-        /* Adjust row heights */
+    }
+
+    /* In mobile view, rows become visible flex containers */
+    .row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* You can add this class to rows you want to reverse in mobile */
+    .row-reverse {
+        flex-direction: column-reverse;
     }
 
     .subcontainer img {
         height: auto;
-
-        /* Let images scale naturally */
+        padding: 0;
     }
 
     .full-width {
         grid-column: span 1;
-        width: 100vw;
-        height: 100vh;
-        object-fit: fill;
-
+        width: 100%;
     }
 
     .sub-one-third-container {
         grid-template-columns: 1fr;
+    }
 
-
+    .sub-one-third {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
 
     .sub-one-third-container .sub-section {
         display: grid;
-        border: 1px solid red;
-        padding: 0 7em 0 7em;
+        /* padding: 0 7em 0 7em; */
         /* max-width: 30ch; */
         text-align: left;
         justify-content: center;
     }
 
-    .swapped {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 10px;
-        width: 100%;
-        max-width: 100%;
-        direction: rtl;
-        /* Reverse the grid direction */
+}
+
+
+/* LAST NIGHT - I worked on trying to swapp things but it is not working */
+
+.spacer {
+    padding: var(--unit-large);
+}
+
+
+/* SPLASH SCREEN UI */
+.splash-screen {
+    position: fixed;
+    z-index: 3;
+    background-color: rgb(0 0 0 / 1);
+    color: white;
+    width: 100%;
+    height: 100svh;
+    display: grid;
+    place-items: center;
+    animation-name: splash-chuck;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(1, -0.01, .72, 1.01);
+    animation-fill-mode: forwards;
+    animation-delay: .6s;
+
+
+
+}
+
+
+/* SPLASH SCREEN ANIMATION */
+@keyframes splash-chuck {
+    100% {
+        translate: 100% 0;
     }
+}
 
-
-    /* LAST NIGHT - I worked on trying to swapp things but it is not working */
-
-    .spacer {
-        padding: var(--unit-small);
-    }
-
-    /* SPLASH SCREEN UI */
-    .splash-screen {
-        position: fixed;
-        z-index: 3;
-        background-color: rgb(0 0 0 / 1);
-        color: white;
-        width: 100%;
-        height: 100svh;
-        display: grid;
-        place-items: center;
-        animation-name: splash-chuck;
-        animation-duration: 1s;
-        animation-timing-function: cubic-bezier(1, -0.01, .72, 1.01);
-        animation-fill-mode: forwards;
-        animation-delay: .6s;
-
-
-
-    }
-
-
-    /* SPLASH SCREEN ANIMATION */
-    @keyframes splash-chuck {
-        100% {
-            translate: 100% 0;
-        }
-    }
+.background-image[data-currentslide='0'] {
+    padding: 0;
+    margin: 0;
+}
