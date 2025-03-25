@@ -455,6 +455,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding: 0 1em;
+    width: 100%;
 
 }
 
@@ -1550,6 +1551,14 @@ footer {
     background-color: var(--color-hero-background);
     padding: 0;
     margin: 0;
+}
+
+@media (max-width: 768px) {
+    .sub-section {
+        h1 {
+            font-size: 4em;
+        }
+    }
 }
 
 /* Row container for each pair */
