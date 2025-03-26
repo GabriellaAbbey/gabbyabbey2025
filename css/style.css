@@ -247,11 +247,16 @@ img {
 }
 
 .topleft {
-    position: fixed;
+    position: absolute;
     top: 8px;
     left: 16px;
     font-size: 18px;
     padding: 16px;
+}
+
+.fixed-ui .topleft {
+    position: fixed;
+
 }
 
 .topright {
@@ -294,7 +299,7 @@ img {
 
 
 .topright-desktop {
-    position: fixed;
+    position: absolute;
     top: 8px;
     right: 8px;
     font-size: .875em;
@@ -302,11 +307,21 @@ img {
     color: #ba0c0c;
 }
 
-.bottomright-desktop {
+.fixed-ui .topright-desktop {
     position: fixed;
+
+}
+
+.bottomright-desktop {
+    position: absolute;
     bottom: 8px;
     right: 8px;
     font-size: .875em;
+}
+
+.fixed-ui .bottomright-desktop {
+    position: fixed;
+
 }
 
 @media (min-width: 768px) {
@@ -331,6 +346,32 @@ img {
 
     }
 
+}
+
+
+
+
+.topleft.animate-rotation {
+    /* writing-mode: vertical-lr; */
+    animation: rotato-logo .8s forwards;
+    transform-origin: right top;
+}
+
+@keyframes rotato-logo {
+    0% {
+        rotate: 0deg;
+        translate: 0 0%;
+    }
+
+    /* 50% {
+        rotate: 90deg;
+        translate: 0 50%;
+    } */
+
+    100% {
+        rotate: -90deg;
+        translate: -100% 0;
+    }
 }
 
 
@@ -454,7 +495,7 @@ body {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 1em;
+    padding: 0 6em;
     width: 100%;
 
 }
