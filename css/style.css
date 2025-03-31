@@ -257,6 +257,13 @@ img {
     padding: 16px;
 }
 
+@media (max-width: 768px) {
+    .topleft {
+        padding: 16px .3em 0 0;
+
+    }
+}
+
 .fixed-ui .topleft {
     position: fixed;
 
@@ -322,12 +329,19 @@ img {
     font-size: .875em;
 }
 
+
+
 .fixed-ui .bottomright-desktop {
     position: fixed;
 
 }
 
 @media (min-width: 768px) {
+    .fixed-ui .topright-desktop {
+        position: fixed;
+
+    }
+
     .topright-desktop {
         top: 8px;
         right: 16px;
@@ -341,24 +355,82 @@ img {
         font-size: 1.125em
     }
 
+    .site-logo svg {
+        scale: .9;
+
+    }
 }
+
+
 
 @media (max-width: 768px) {
     .bottomright-desktop svg {
-        /* width: 80%;
-        border: 1px solid red; */
+        scale: .6;
+
 
     }
 
+
+
+    .bottomright-desktop {
+        right: 0;
+    }
+
     .site-logo svg {
-        border: 1px solid red;
         scale: .8;
 
     }
 
+    .biglogo {
+        display: none;
+
+
+    }
+
+    .minilogo {
+        display: block;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .biglogo {
+        display: block;
+    }
+
+    .minilogo {
+        display: none;
+    }
+
 }
 
 
+
+
+
+.topleft.biglogo.animate-rotation {
+    /* writing-mode: vertical-lr; */
+    animation: rotato-logo-big .8s forwards;
+    transform-origin: right top;
+}
+
+@keyframes rotato-logo-big {
+    0% {
+        rotate: 0deg;
+        translate: 0 0%;
+
+    }
+
+    /* 50% {
+        rotate: -90deg;
+        translate: -1% -5%;
+    } */
+
+    100% {
+        rotate: -90deg;
+        translate: -105% -10%;
+    }
+}
 
 
 .topleft.animate-rotation {
@@ -374,14 +446,14 @@ img {
 
     }
 
-    50% {
+    /* 50% {
         rotate: -90deg;
         translate: -1% -5%;
-    }
+    } */
 
     100% {
         rotate: -90deg;
-        translate: -120% -30%;
+        translate: -120% -10%;
     }
 }
 
