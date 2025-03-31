@@ -173,17 +173,12 @@ h3 {
 
 .hero h1 {
     text-align: left;
-    font-size: 4em;
+    /* font-size: 4em; */
 }
 
 @media (max-width: 768px) {
     .hero h1 {
-        font-size: 3.5em;
         padding: .1em;
-    }
-
-    .hero a {
-        padding-left: .5em;
     }
 }
 
@@ -196,6 +191,14 @@ h1 {
     /* SET H1 LEADING */
     line-height: 1;
     padding-bottom: var(--unit-xs);
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3em;
+        padding-bottom: var(--unit-xs);
+        padding-left: var(--unit-xs);
+    }
 }
 
 h2 {
@@ -337,12 +340,19 @@ img {
         right: 16px;
         font-size: 1.125em
     }
+
 }
 
 @media (max-width: 768px) {
     .bottomright-desktop svg {
         /* width: 80%;
         border: 1px solid red; */
+
+    }
+
+    .site-logo svg {
+        border: 1px solid red;
+        scale: .8;
 
     }
 
@@ -361,16 +371,17 @@ img {
     0% {
         rotate: 0deg;
         translate: 0 0%;
+
     }
 
-    /* 50% {
-        rotate: 90deg;
-        translate: 0 50%;
-    } */
+    50% {
+        rotate: -90deg;
+        translate: -1% -5%;
+    }
 
     100% {
         rotate: -90deg;
-        translate: -100% 0;
+        translate: -120% -30%;
     }
 }
 
@@ -498,6 +509,15 @@ body {
     padding: 0 6em;
     width: 100%;
 
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 2em;
+        max-width: 100%;
+
+
+    }
 }
 
 /* GRID */
@@ -664,13 +684,13 @@ body {
 }
 
 /* SWAPPED (Reverse) WORKS ONLY WITH TWO CHILDREN */
-.row.swapped>*:first-child {
+/* .row-main.swapped>*:first-child {
     order: 2;
 }
 
-.row.swapped>*:last-child {
+.row-main.swapped>*:last-child {
     order: 1;
-}
+} */
 
 .mix {
     mix-blend-mode: difference;
@@ -991,11 +1011,56 @@ section {
     }
 }
 
+.hero .one-half,
+.hero .two-thirds,
+.hero .one-third {
+    text-align: left;
+
+
+    a {
+        padding-left: .4em;
+    }
+}
+
+.hero-container {
+    /* max-width: 1600px; */
+    padding-top: 6em;
+    margin: 0;
+    border: 1px solid rgb(0, 255, 217);
+
+}
+
+.hero-text {
+    /* padding: 7em 0 0 0; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* border: 1px solid red; */
+    text-wrap: pretty;
+
+    h1 {
+        font-size: 5em;
+    }
+}
+
+.dragon {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* border: 1px solid red; */
+    text-wrap: pretty;
+}
+
 
 @media (max-width: 715px) {
     .hero {
         text-align: left;
         padding-left: 2.5em;
+
+        h1 {
+            font-size: 3em;
+        }
     }
 }
 
@@ -1242,19 +1307,37 @@ footer {
     }
 
     img {
-        display: flex;
-        justify-content: flex-end;
-        place-items: bottom;
+
+        margin-top: auto;
+
     }
 
+
+
     padding-bottom: 0;
+}
+
+
+#about .one-half.align-end {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
 }
 
 @media (max-width: 768px) {
     #about {
         padding-top: 6em;
     }
+
+    img {
+        display: flex;
+        /* object-position: bottom; */
+        bottom: 0;
+        /* justify-content: flex-end; */
+    }
 }
+
 
 #works,
 #projects {
@@ -1316,7 +1399,7 @@ footer {
 
 @media (max-width: 768px) {
     .scroll-container {
-        padding: 0;
+        padding: 0 2em;
         margin: 0;
         width: 100%;
     }
@@ -1324,11 +1407,16 @@ footer {
 
 /* Change from swiper-slide to scroll-section */
 
+
+.scroll-section {
+    /* all your existing styles */
+    margin: 20rem 0;
+    /* other styles */
+}
+
 @media (max-width: 768px) {
     .scroll-section {
-        margin: 0;
-        padding: 0;
-
+        margin: 10rem 0;
     }
 }
 
@@ -1339,8 +1427,7 @@ footer {
     align-items: center;
     background: #000000;
     text-align: center;
-    /* height: 80vh; */
-    margin: 20rem 0;
+    /* margin: 20rem 0; */
     z-index: 0;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.327);
     border-radius: 11px;
@@ -1545,14 +1632,6 @@ footer {
     }
 }
 
-.hero-text {
-    padding-left: 3em;
-
-    h1 {
-
-        max-width: 10ch
-    }
-}
 
 .test {
     /* max-width: 50%; */
