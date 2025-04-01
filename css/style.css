@@ -241,13 +241,13 @@ img {
     left: -9999px;
 }
 
-.bottomleft {
+/* .bottomleft {
     position: fixed;
     bottom: 8px;
     left: 16px;
     font-size: 18px;
     padding: 16px;
-}
+} */
 
 .topleft {
     position: absolute;
@@ -269,7 +269,7 @@ img {
 
 }
 
-.topright {
+/* .topright {
     position: fixed;
     top: 8px;
     right: 16px;
@@ -299,7 +299,7 @@ img {
     right: 120px;
     font-size: 18px;
     padding: 16px;
-}
+} */
 
 .centered {
     display: flex;
@@ -323,41 +323,43 @@ img {
 }
 
 .bottomright-desktop {
+    /* border: 3px solid red; */
     position: absolute;
     bottom: 8px;
     right: 8px;
     font-size: .875em;
 }
 
-
-
+/* This applies the fixed position when .fixed-ui is present */
 .fixed-ui .bottomright-desktop {
     position: fixed;
-
 }
 
 @media (min-width: 768px) {
     .fixed-ui .topright-desktop {
         position: fixed;
-
     }
 
     .topright-desktop {
         top: 8px;
         right: 16px;
         font-size: 1.125em;
-
     }
 
     .bottomright-desktop {
         bottom: 8px;
         right: 16px;
-        font-size: 1.125em
+        font-size: 1.125em;
+        /* No position property here */
+    }
+
+    /* Add this to ensure the fixed position for desktop specifically */
+    .fixed-ui .bottomright-desktop {
+        position: fixed;
     }
 
     .site-logo svg {
         scale: .9;
-
     }
 }
 
@@ -778,6 +780,13 @@ body {
 /* SITE HEADER */
 .site-header-nav {
     a {
+
+        color: #F4F3EB;
+    }
+}
+
+.fixed-ui {
+    a {
         color: #edd6ee;
     }
 }
@@ -794,14 +803,10 @@ body {
         align-items: center;
     }
 
-    /* ADD SOME GENERAL SPACING AROUND THE HEADER */
-    /* padding: var(--unit-small); */
     padding: 0;
 
-    /* REMOVE LINK UNDERLINES IN HEADER */
     a {
         text-decoration: none;
-        /* color: rgb(255, 255, 255); */
 
     }
 
@@ -990,18 +995,6 @@ body {
 }
 
 
-/* IF TOGGLE MENU DISPLAY LOGO ON LEFT AND MENU ON RIGHT ON ALL SCREENS */
-.site-header:has(.toggle-menu) {
-    display: flex;
-    justify-content: space-between;
-
-    .site-logo {
-        position: relative;
-        z-index: 100;
-    }
-
-}
-
 
 
 /* PLACE SITE HEADER ON TOP OF HERO ON LARGE SCREENS */
@@ -1010,13 +1003,8 @@ body {
     @media (min-width: 768px) {
 
         /* RENDER HEADER ON TOP OF HERO */
-        position: absolute;
+        /* position: absolute; */
         width: 100%;
-
-        /* SET SITE HEADER LINK COLOR ON LARGE SCREENS */
-        a {
-            /* color: var(--color-siteheader-links); */
-        }
 
         /* ADD MORE SPACE ON TOP FOR THE ABSOLUTE HEADER */
         &+.site-main>.hero {
@@ -1113,6 +1101,14 @@ section {
     h1 {
         font-size: 5em;
     }
+}
+
+.subhero .hero-text {
+    /* border: 1px solid red; */
+    padding-top: 0;
+    padding-left: 7em;
+    /* padding-right: 7em; */
+
 }
 
 .dragon {
@@ -1256,6 +1252,12 @@ section {
 
 }
 
+.project-info.info-sub {
+    padding: 6em;
+    z-index: 3;
+}
+
+
 .project-info .title {
     /*    
     border: 1px solid red; */
@@ -1289,6 +1291,80 @@ section {
 
 
 
+/* HALF WIDTH WRAPPER */
+
+
+
+
+
+/* HALF WIDTH WRAPPER */
+.half-width-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.half-width-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Create overlay effect using pseudo-element */
+.half-width-wrapper a {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.half-width-wrapper a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.256);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+/* Show overlay on hover */
+.half-width-wrapper a:hover::after {
+    opacity: 1;
+}
+
+/* Image zoom effect on hover */
+.half-width-wrapper a:hover img {
+    transform: scale(1.03);
+}
+
+/* Add project info styling for half-width items if needed */
+.half-width-wrapper .project-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Make it responsive */
+@media (max-width: 768px) {
+    .half-width-wrapper {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+    }
+
+    .half-width-wrapper .project-info {
+        padding: 3em;
+    }
+}
 
 
 
@@ -1296,6 +1372,74 @@ section {
 
 
 
+/* ///////// FULL WIDTH WRAPPER */
+
+
+
+.full-width-wrapper {
+    grid-column: span 2;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.full-overlay-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .full-width-wrapper {
+        grid-column: span 1;
+        margin: 0;
+
+    }
+
+    .project-info.info-sub {
+        padding: 2em;
+    }
+
+}
+
+
+
+
+/* Create the overlay using a pseudo-element */
+.full-width-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.256);
+    /* Black with 50% opacity */
+    opacity: 0;
+    /* Start with invisible overlay */
+    transition: opacity 0.3s ease;
+    /* Smooth transition */
+    pointer-events: none;
+    /* So it doesn't interfere with clicks */
+}
+
+/* Show the overlay on hover */
+.full-width-wrapper:hover::after {
+    opacity: 1;
+}
+
+/* You might want to add a subtle effect to the image too */
+.full-width-wrapper img {
+    transition: transform 0.3s ease;
+}
+
+.full-width-wrapper:hover img {
+    transform: scale(1.03);
+    /* Slightly enlarge image on hover */
+}
 
 /* --------------------------
 ------ ANIMATION ---------
@@ -1359,6 +1503,12 @@ footer {
 
 #projects {
     padding-top: 6em;
+}
+
+#projects .container {
+    padding: 0;
+    display: flex;
+    justify-content: start;
 }
 
 #about {
@@ -1659,7 +1809,7 @@ footer {
 
         padding: 0;
         margin: 0;
-        padding-top: 2em;
+        /* padding-top: 2em; */
         place-items: center;
         margin: 0;
     }
@@ -1668,6 +1818,9 @@ footer {
 
 @media (max-width: 768px) {
 
+    .subhero .hero-text {
+        padding-left: 5em;
+    }
 
     .subhero {
         padding: 0;
@@ -1698,7 +1851,8 @@ footer {
 
         h1 {
             color: white;
-            padding-top: 2.5em;
+            /* padding-top: 2.5em; */
+
 
         }
     }
