@@ -1040,6 +1040,7 @@ section {
     padding-top: var(--unit-small); */
 
 
+
 }
 
 .no-pad {
@@ -1738,6 +1739,7 @@ footer {
     background-blend-mode: multiply;
 }
 
+
 .background-image[data-currentslide='0'] {
     background-image: url(../img/Frenzi/frenzihero.png);
 }
@@ -1823,7 +1825,31 @@ footer {
         color: white;
         /* Adds a semi-transparent black tint */
 
-        background-image: url(/img//Frenzi/frenzi_wall_test.png);
+        background-image: url(/img/Frenzi/frenzi_wall_test.png);
+
+        background-repeat: no-repeat;
+        background-position: right;
+        height: 100vh;
+        display: grid;
+        background-size: cover;
+        place-items: center;
+        padding: 0;
+        margin: 0;
+
+
+        h1 {
+            color: white;
+            /* padding-top: 2.5em; */
+
+
+        }
+    }
+
+    .subhero.sav {
+        color: white;
+        /* Adds a semi-transparent black tint */
+
+        background-image: url(/img/sav/sav_door_mobile.gif);
 
         background-repeat: no-repeat;
         background-position: right;
