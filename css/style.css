@@ -197,7 +197,7 @@ h1 {
     h1 {
         font-size: 3em;
         padding-bottom: var(--unit-xs);
-        padding-left: var(--unit-xs);
+        /* padding-left: var(--unit-xs); */
     }
 }
 
@@ -1194,6 +1194,9 @@ section {
 
 
 /* BUTTONS */
+
+
+
 .button {
     /* BUTTON COLORS */
     /* border: 1px solid var(--color-hero-text); */
@@ -1573,22 +1576,28 @@ footer {
 
 #next {
     display: flex;
-    justify-content: end;
+    justify-content: start;
     padding: 0 2em 2em 0;
-    text-align: center;
+    text-align: left;
+
+    h1 {
+        font-size: 4em;
+    }
 
     a {
         text-decoration: none;
+        color: #3aa22e;
     }
 
-    h2:hover {
+    a:hover {
         color: var(--color-links-hover);
     }
 
-    h2 {
-        color: #3aa22e;
+    .container {
 
+        max-width: 1800px;
     }
+
 }
 
 @media (max-width: 768px) {
@@ -1859,7 +1868,7 @@ footer {
         background-image: url(/img/sav/sav_door_mobile.gif);
 
         background-repeat: no-repeat;
-        background-position: right;
+        background-position: center;
         height: 100vh;
         display: grid;
         background-size: cover;
@@ -1870,13 +1879,18 @@ footer {
 
         h1 {
             color: white;
+
             /* padding-top: 2.5em; */
 
 
         }
+
     }
 }
 
+.subhero.sav .hero-text {
+    max-width: 40em;
+}
 
 .test {
     /* max-width: 50%; */
@@ -1900,13 +1914,18 @@ footer {
         font-weight: 500;
     }
 
+    h1 {
+        text-align: left;
+    }
+
     h2 {
         padding-bottom: var(--unit-xs);
         padding-left: .1em;
+        text-align: left;
     }
 
     p {
-        /* padding-left: .3em; */
+        padding-left: .3em;
     }
 }
 
@@ -1929,6 +1948,8 @@ footer {
 
 @media (max-width: 768px) {
     .sub-section {
+        margin: 0;
+
         h1 {
             font-size: 4em;
         }
