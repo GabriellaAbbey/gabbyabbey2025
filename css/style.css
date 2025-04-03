@@ -1559,7 +1559,8 @@ footer {
 
 
 #works,
-#projects {
+#projects,
+.web {
 
 
     h2 {
@@ -1573,6 +1574,8 @@ footer {
     }
 
 }
+
+
 
 #next {
     display: flex;
@@ -1966,6 +1969,43 @@ footer {
 
         }
 
+    }
+
+    .subhero.taco {
+        color: white;
+        /* Adds a semi-transparent black tint */
+
+        background-image: url(/img/taco/taco_baby_sq.gif);
+
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100vh;
+        display: grid;
+        background-size: cover;
+        place-items: center;
+        padding: 0;
+        margin: 0;
+
+
+        h1 {
+            color: white;
+            font-size: 4.5em;
+
+            /* padding-top: 2.5em; */
+
+
+        }
+
+    }
+}
+
+.taco {
+    a {
+        color: var(--color-links);
+    }
+
+    a:hover {
+        color: var(--color-links-hover);
     }
 }
 
