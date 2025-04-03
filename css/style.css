@@ -1913,6 +1913,33 @@ footer {
         }
 
     }
+
+    .subhero.felicite {
+        color: white;
+        /* Adds a semi-transparent black tint */
+
+        background-image: url(/img/felicite/cows_04_sq.png);
+
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100vh;
+        display: grid;
+        background-size: cover;
+        place-items: center;
+        padding: 0;
+        margin: 0;
+
+
+        h1 {
+            color: white;
+            font-size: 4.5em;
+
+            /* padding-top: 2.5em; */
+
+
+        }
+
+    }
 }
 
 .subhero.sav .hero-text {
