@@ -191,7 +191,7 @@ h1 {
     /* SET H1 LEADING */
     line-height: 1;
     padding-bottom: var(--unit-xs);
-    letter-spacing: -.02em;
+    /* letter-spacing: -.02em; */
 }
 
 @media (max-width: 768px) {
