@@ -119,8 +119,13 @@ body {
 /* SET THE COLOR OF HEADINGS */
 h1,
 h2,
-h3 {
+h3,
+p {
     color: var(--color-text-headings);
+}
+
+h4 {
+    color: var(--color-hero-background);
 }
 
 a {
@@ -146,16 +151,22 @@ body {
 /* FONT WEIGHTS */
 
 h1 {
-    font-weight: 700;
-}
-
-h2 {
     font-weight: 500;
 }
 
-h3 {
-    font-weight: 400;
+h2 {
+    font-weight: 300;
+    font-style: italic;
 }
+
+h3 {
+    font-weight: 100;
+}
+
+h4 {
+    font-weight: 100;
+}
+
 
 p {
     font-weight: 400;
@@ -167,6 +178,10 @@ h1,
 h2,
 h3 {
     font-family: var(--font-headings);
+}
+
+h4 {
+    font-family: var(--font-body);
 }
 
 /* TYPOGRAPHIC SCALE */
@@ -184,44 +199,31 @@ h3 {
 
 
 h1 {
-
-    /* SET H1 FONT SIZE */
-    font-size: 6em;
-
-    /* SET H1 LEADING */
+    font-size: 5em;
     line-height: 1;
     padding-bottom: var(--unit-xs);
-    /* letter-spacing: -.02em; */
 }
 
 @media (max-width: 768px) {
     h1 {
         font-size: 3em;
         padding-bottom: var(--unit-xs);
-        /* padding-left: var(--unit-xs); */
     }
 }
 
 h2 {
-
-    /* SET H1 FONT SIZE */
     font-size: 2em;
-
-    /* SET H1 LEADING */
     line-height: 1.2;
 }
 
 h3 {
-
-    /* SET H1 FONT SIZE */
     font-size: 1.5em;
-
-    /* SET H1 LEADING */
     line-height: 1.3;
 }
 
+h4 {}
+
 p {
-    /* max-width: 65ch; */
     text-wrap: pretty;
 }
 
@@ -2074,6 +2076,10 @@ footer {
     height: 100svh;
     grid-template-columns: 1fr 1fr;
 
+}
+
+.shrink {
+    font-size: 4em;
 }
 
 .sub-section {
