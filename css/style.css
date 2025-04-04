@@ -191,6 +191,7 @@ h1 {
     /* SET H1 LEADING */
     line-height: 1;
     padding-bottom: var(--unit-xs);
+    letter-spacing: -.02em;
 }
 
 @media (max-width: 768px) {
@@ -634,10 +635,10 @@ body {
     }
 }
 
-.row>* {
-    /* margin-bottom: var(--gridgap); */
+/* .row>div {
+    margin-bottom: var(--gridgap);
     margin-top: var(--gridgap);
-}
+} */
 
 
 /* for demo */
@@ -1138,8 +1139,8 @@ section {
 .site-footer {
     background-color: var(--color-sitefooter-background);
     color: var(--color-sitefooter-text);
-    padding-bottom: 2em;
-    padding-top: 2em;
+    padding-bottom: 6em;
+    padding-top: 6em;
 
 
     h1,
@@ -1580,7 +1581,7 @@ footer {
 #next {
     display: flex;
     justify-content: start;
-    padding: 0 2em 2em 0;
+    padding: 6em 2em 6em 0;
     text-align: left;
 
     h1 {
@@ -1598,7 +1599,7 @@ footer {
 
     .container {
 
-        max-width: 1800px;
+        /* max-width: 1800px; */
     }
 
 }
@@ -2024,6 +2025,33 @@ footer {
         }
 
     }
+
+    .subhero.pv {
+        color: white;
+        /* Adds a semi-transparent black tint */
+
+        background-image: url(/img/pitviper/pv_hero.jpg);
+
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100vh;
+        display: grid;
+        background-size: cover;
+        place-items: center;
+        padding: 0;
+        margin: 0;
+
+
+        h1 {
+            color: white;
+            font-size: 4.5em;
+
+            /* padding-top: 2.5em; */
+
+
+        }
+
+    }
 }
 
 .taco {
@@ -2086,12 +2114,16 @@ footer {
 .subcontainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    /* gap: 10px; */
     width: 100%;
     background-color: var(--color-hero-background);
     padding: 0;
     margin: 0;
     ;
+}
+
+.subcontainer.withgap {
+    gap: 10px;
 }
 
 @media (max-width: 768px) {
