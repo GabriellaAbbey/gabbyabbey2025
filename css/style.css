@@ -1139,10 +1139,12 @@ section {
 
 /* SITE FOOTER */
 .site-footer {
+    position: relative;
     background-color: var(--color-sitefooter-background);
     color: var(--color-sitefooter-text);
     padding-bottom: 6em;
     padding-top: 6em;
+    border-radius: 2em 2em 0 0;
 
 
     h1,
@@ -1464,9 +1466,36 @@ body {
 }
 
 #works,
-#about {
+#about,
+#next,
+.subcontainer {
     background-color: var(--color-hero-background);
+
+    h1 {
+
+
+        font-size: 3em;
+        font-weight: 300;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
 }
+
+/* .subcontainer {
+    h1 {
+
+
+        font-size: 3em;
+        font-weight: 300;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+} */
 
 header {
     width: 100%;
@@ -1539,6 +1568,11 @@ footer {
     padding-bottom: 0;
 }
 
+#about {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 #about .one-half.align-end {
     display: flex;
@@ -1546,6 +1580,21 @@ footer {
     justify-content: flex-end;
 
 }
+
+.img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
 
 @media (max-width: 768px) {
     #about {
@@ -1719,6 +1768,7 @@ footer {
     height: 100%;
     display: block;
     overflow: hidden;
+
 }
 
 /* Make the image cover the entire area */
@@ -1822,9 +1872,13 @@ footer {
         /* padding-top: 2em; */
         place-items: center;
         margin: 0;
+        padding-bottom: .2em;
+        max-width: 10ch;
     }
 
 }
+
+
 
 @media (max-width: 768px) {
 
