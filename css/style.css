@@ -382,56 +382,85 @@ img {
 
 
 .topleft {
-    /* writing-mode: vertical-lr; */
-    /* animation: rotato-logo .8s reverse; */
     transform-origin: right top;
     rotate: 0deg;
     translate: 0 0%;
-    transition: all 1s ease-out;
+    transition: all .5s ease-out;
 }
 
 
 .topleft.animate-rotation {
-    /* writing-mode: vertical-lr; */
-    /* animation: rotato-logo .8s forwards; */
     transform-origin: right top;
     rotate: -90deg;
-    translate: -120% -10%;
+    translate: -105% -10%;
 }
 
 
+.topright-desktop {
+
+    transform-origin: right top;
+    rotate: 0deg;
+    translate: 0 0%;
+    transition: all .5s ease-out;
+}
 
 .topright-desktop.animate-rotation {
-    /* writing-mode: vertical-lr; */
-    animation: rotato .8s forwards;
     transform-origin: right top;
+    rotate: -90deg;
+    translate: -30% 10%;
 }
 
-@keyframes rotato {
+/* .topright-desktop li {
+    rotate: 0deg;
+    transition: all .5s ease-out;
+}
+
+.topright-desktop.animate-rotation li {
+    rotate: 180deg;
+
+
+} */
+
+
+
+/* @keyframes rotato {
     0% {
         rotate: 0deg;
         translate: 0 0%;
     }
 
+    
     50% {
         rotate: 90deg;
         translate: 0 50%;
     }
 
     100% {
-        rotate: 90deg;
-        translate: 0 300%;
+        rotate: -90deg;
+        translate: -30% 10%;
     }
+} */
+
+.bottomright-desktop {
+    transform-origin: right top;
+    rotate: 0deg;
+    translate: 0 0%;
+    transition: all .5s ease-out;
+
 }
+
 
 .bottomright-desktop.animate-rotation {
-    /* writing-mode: vertical-lr; */
-    animation: rotato-botto .8s forwards;
     transform-origin: right top;
+    rotate: 90deg;
+    translate: 0% 100%;
 
 }
 
-@keyframes rotato-botto {
+
+
+
+/* @keyframes rotato-botto {
     0% {
         rotate: 0deg;
         translate: 0 0%;
@@ -451,37 +480,38 @@ img {
         rotate: 90deg;
         translate: 0 100%;
     }
-}
+} */
+
+
 
 /* New animation ONLY for the .bottomright-desktop list items */
-.bottomright-desktop li {
+/* .bottomright-desktopx li {
     transition: transform 0.8s;
     transform-origin: center;
+} */
+
+
+.bottomright-desktop li {
+    rotate: 0deg;
+    transition: all .5s ease-out;
 }
 
 .bottomright-desktop.animate-rotation li {
-    animation: rotate-item 0.8s forwards;
-    animation-delay: calc(var(--item-index, 0) * 0.1s);
-    /* Staggered animation */
+    rotate: -90deg;
+    /* animation: rotate-item 0.8s forwards;
+    animation-delay: calc(var(--item-index, 0) * 0.1s); */
+
 }
 
-@keyframes rotate-item {
+/* @keyframes rotate-item {
     0% {
         transform: rotate(0deg);
-    }
-
-    50% {
-        transform: rotate(0deg);
-    }
-
-    51% {
-        transform: rotate(-90deg);
     }
 
     100% {
         transform: rotate(-90deg);
     }
-}
+} */
 
 /* --------------------------
 ---------LAYOUT--------------
@@ -722,8 +752,53 @@ body {
     a {
 
         color: #F4F3EB;
+
     }
 }
+
+.site-menu-main a:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #c463cf;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.site-menu-main a:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+.site-menu-social a:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #c463cf;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.site-menu-social a:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+/* .site-header-nav a:hover {
+    border-bottom: none;
+    padding-bottom: 3em;
+    background-repeat: repeat;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 10 18'%3E%3Cstyle type='text/css'%3E.squiggle%7Banimation:shift .5s linear infinite;%7D@keyframes shift %7Bfrom %7Btransform:translateX(-10px);%7Dto %7Btransform:translateX(0);%7D%7D%3C/style%3E%3Cpath fill='none' stroke='blue' stroke-width='.5' class='squiggle' d='M0,17.5 c 2.5,0,2.5,-1.5,5,-1.5 s 2.5,1.5,5,1.5 c 2.5,0,2.5,-1.5,5,-1.5 s 2.5,1.5,5,1.5' /%3E%3C/svg%3E");
+
+} */
 
 .fixed-ui {
     a {
@@ -795,8 +870,13 @@ body {
         /* MAKE SITE NAV LINKS BIG LIKE BUTTONS */
         a {
             display: block;
-            padding: 1em;
+            padding: 1em 1em .2em 1em;
         }
+
+
+
+
+
 
     }
 
