@@ -114,6 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
     buttons.forEach(button => {
       if (scrollPercentage >= scrollThreshold) {
         button.classList.add('animate-rotation');
+        button.removeAttribute('style');
       } else {
         button.classList.remove('animate-rotation');
       }
