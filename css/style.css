@@ -53,7 +53,7 @@ CSS TABLE OF CONTENTS
     --color-project-info: rgb(244, 243, 235);
 
     --color-links: #3b9c30;
-    --color-links-hover: rgba(0, 0, 0, 0.674);
+    --color-links-hover: rgba(255, 0, 195, 0.897);
     --color-text-button-hover: rgba(0, 4, 1, 0.674);
     --color-links-dark: rgb(102 102 102);
     --color-links-darker: rgb(0 0 0);
@@ -119,10 +119,10 @@ body {
 /* SET THE COLOR OF HEADINGS */
 h1,
 h2,
-h3,
-p {
+h3 {
     color: var(--color-text-headings);
 }
+
 
 
 h4 {
@@ -554,6 +554,8 @@ img {
     }
 } */
 
+
+
 /* --------------------------
 ---------LAYOUT--------------
 -------------------------- */
@@ -786,15 +788,35 @@ body {
 /* --------------------------
 --------SITE STRUCTURE-------
 -------------------------- */
+svg path {
+    transition: fill 0.3s ease;
+}
+
+
+a:hover svg path {
+    fill: #fe00f6;
+}
+
 
 
 /* SITE HEADER */
 .site-header-nav {
+    z-index: 4;
+
     a {
 
         color: #F4F3EB;
+        transition: all 0.3s ease;
 
     }
+
+    a:hover {
+        color: #fe00f6;
+    }
+
+
+
+
 }
 
 /* .selected a:after {
@@ -834,9 +856,34 @@ body {
     left: 0;
 } */
 
-.site-header-nav a:hover {
+.site-menu-social svg {
+    z-index: 4;
+    ;
+}
+
+.site-menu-main {
+    gap: 1em;
+}
+
+.site-menu-main li a {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.site-menu-main li.selected a {
+
+    color: magenta;
+    text-decoration: underline;
+
+    &:hover {
+        text-decoration: none;
+        border-bottom: none;
+    }
+
+}
+
+.wiggle:hover {
     border-bottom: none;
-    /* padding-bottom: 5em; */
     background-repeat: repeat;
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 10 18'%3E%3Cstyle type='text/css'%3E.squiggle%7Banimation:shift .5s linear infinite;%7D@keyframes shift %7Bfrom %7Btransform:translateX(-10px);%7Dto %7Btransform:translateX(0);%7D%7D%3C/style%3E%3Cpath fill='none' stroke='Magenta' stroke-width='.5' class='squiggle' d='M0,17.5 c 2.5,0,2.5,-1.5,5,-1.5 s 2.5,1.5,5,1.5 c 2.5,0,2.5,-1.5,5,-1.5 s 2.5,1.5,5,1.5' /%3E%3C/svg%3E");
 
@@ -912,7 +959,10 @@ body {
         /* MAKE SITE NAV LINKS BIG LIKE BUTTONS */
         a {
             display: block;
-            padding: 1em 1em .5em 1em;
+            padding: 1em 0 .3em 0;
+            margin: 0;
+
+
         }
 
 
@@ -1109,6 +1159,10 @@ section {
     padding: 0;
 }
 
+a {
+    transition: color 0.3s ease;
+}
+
 /* HERO SECTION */
 .hero {
     background-color: var(--color-hero-background);
@@ -1125,6 +1179,10 @@ section {
     /* padding-top: calc(4em + var(--unit-large)); */
     a {
         color: var(--color-links);
+    }
+
+    a:hover {
+        color: var(--color-links-hover);
     }
 
     h1,
@@ -1199,6 +1257,16 @@ section {
 
 
 /* SITE FOOTER */
+
+
+.footer-nav .pages ul li a:hover {
+    color: magenta;
+    border-bottom: none;
+    /* padding-bottom: 5em; */
+    background-repeat: repeat;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 10 18'%3E%3Cstyle type='text/css'%3E.squiggle%7Banimation:shift .5s linear infinite;%7D@keyframes shift %7Bfrom %7Btransform:translateX(-10px);%7Dto %7Btransform:translateX(0);%7D%7D%3C/style%3E%3Cpath fill='none' stroke='Magenta' stroke-width='.5' class='squiggle' d='M0,17.5 c 2.5,0,2.5,-1.5,5,-1.5 s 2.5,1.5,5,1.5 c 2.5,0,2.5,-1.5,5,-1.5 s 2.5,1.5,5,1.5' /%3E%3C/svg%3E");
+}
+
 .site-footer {
     position: relative;
     background-color: var(--color-sitefooter-background);
@@ -1226,6 +1294,8 @@ section {
         font-weight: 200;
     }
 
+
+
     p {
         color: #F4F3EB;
     }
@@ -1234,6 +1304,9 @@ section {
 
 
 .site-nav {
+
+
+
     ul {
         list-style: none;
         margin: 0;
@@ -1577,7 +1650,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 10;
+    z-index: 3;
 }
 
 @media (max-width: 768px) {
@@ -1718,8 +1791,12 @@ footer {
 
 #projects .container {
     padding: 0;
-    display: flex;
-    justify-content: start;
+    /* display: flex;
+    justify-content: start; */
+}
+
+.visual-adjustment p {
+    padding-left: .4em;
 }
 
 #about {
@@ -1729,6 +1806,8 @@ footer {
         color: #3aa22e;
     }
 
+
+
     h2 {
         padding: var(--unit-xs);
 
@@ -1736,7 +1815,7 @@ footer {
 
     p {
         padding-bottom: var(--unit-small);
-        padding-left: .4em;
+        /* padding-left: .4em; */
     }
 
     img {
@@ -1750,7 +1829,17 @@ footer {
     padding-bottom: 0;
 }
 
+#about a {
+    color: var(--color-links);
+}
+
+#about a:hover {
+    color: var(--color-links-hover);
+}
+
 #about {
+
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1791,6 +1880,42 @@ footer {
     }
 }
 
+.row-main {
+    border: 1px solid red;
+    justify-content: end;
+    /* align-items: end; */
+}
+
+.one-half {
+    /* border: 1px solid yellow; */
+}
+
+.resume {
+
+    border: 1px solid blue;
+
+
+    h2 {}
+
+    h4 {
+        color: var(--color-hero-text);
+        font-size: .8em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+        color: #3b9c30
+    }
+
+    p {
+        padding-left: 0;
+        margin: 0;
+
+
+        font-size: .7em;
+        color: var(--color-hero-text);
+    }
+}
 
 #works,
 #projects,
@@ -1809,7 +1934,11 @@ footer {
 
 }
 
-
+#works {
+    a:hover {
+        color: var(--color-links-hover);
+    }
+}
 
 #next {
     display: flex;
