@@ -2193,6 +2193,8 @@ footer {
 
 @media (max-width: 768px) {
 
+
+
     .subhero .hero-text {
         padding-left: 5em;
     }
@@ -2230,6 +2232,10 @@ footer {
 
 
         }
+
+        p {
+            max-width: fit-content;
+        }
     }
 
     .subhero.sav {
@@ -2262,7 +2268,7 @@ footer {
         color: white;
         /* Adds a semi-transparent black tint */
 
-        background-image: url(/img/constellation/constellation_hero.jpg);
+        background-image: url(/img/constellation/constellation_dipper.gif);
 
         background-repeat: no-repeat;
         background-position: center;
@@ -2276,7 +2282,7 @@ footer {
 
         h1 {
             color: white;
-            font-size: 4.5em;
+            font-size: 2.5em;
 
             /* padding-top: 2.5em; */
 
