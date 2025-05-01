@@ -1881,7 +1881,7 @@ footer {
 }
 
 .row-main {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     justify-content: end;
     /* align-items: end; */
 }
