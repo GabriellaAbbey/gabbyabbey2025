@@ -2238,6 +2238,33 @@ footer {
         }
     }
 
+    .subhero.pv {
+        color: white;
+        /* Adds a semi-transparent black tint */
+
+        background-image: url(/img/pitviper/pv_hero.jpg);
+
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100vh;
+        display: grid;
+        background-size: cover;
+        place-items: center;
+        padding: 0;
+        margin: 0;
+
+
+        h1 {
+            color: white;
+            font-size: 4.5em;
+
+            /* padding-top: 2.5em; */
+
+
+        }
+
+    }
+
     .subhero.sav {
         color: white;
         /* Adds a semi-transparent black tint */
@@ -2426,34 +2453,12 @@ footer {
 
     }
 
+
+
+
+
 }
 
-.subhero.pv {
-    color: white;
-    /* Adds a semi-transparent black tint */
-
-    background-image: url(/img/pitviper/pv_hero.jpg);
-
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100vh;
-    display: grid;
-    background-size: cover;
-    place-items: center;
-    padding: 0;
-    margin: 0;
-
-
-    h1 {
-        color: white;
-        font-size: 4.5em;
-
-        /* padding-top: 2.5em; */
-
-
-    }
-
-}
 
 
 .taco {
