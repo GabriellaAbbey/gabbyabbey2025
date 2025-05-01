@@ -2606,7 +2606,7 @@ footer {
 
     .sub-one-third-container .sub-section {
         display: grid;
-        /* padding: 0 7em 0 7em; */
+        padding: 0 7em 0 7em;
         /* max-width: 30ch; */
         text-align: left;
         justify-content: center;
