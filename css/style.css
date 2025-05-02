@@ -2345,117 +2345,119 @@ footer {
 
     }
 
-}
-
-.subhero.felicite {
-    color: white;
-    /* Adds a semi-transparent black tint */
-
-    background-image: url(/img/felicite/cows_04_sq.png);
-
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100vh;
-    display: grid;
-    background-size: cover;
-    place-items: center;
-    padding: 0;
-    margin: 0;
 
 
-    h1 {
+    .subhero.felicite {
         color: white;
-        font-size: 4.5em;
+        /* Adds a semi-transparent black tint */
 
-        /* padding-top: 2.5em; */
+        background-image: url(/img/felicite/cows_04_sq.png);
 
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100vh;
+        display: grid;
+        background-size: cover;
+        place-items: center;
+        padding: 0;
+        margin: 0;
+
+
+        h1 {
+            color: white;
+            font-size: 4.5em;
+
+            /* padding-top: 2.5em; */
+
+
+        }
 
     }
 
-}
-
-.subhero.chunky {
-    color: white;
-    /* Adds a semi-transparent black tint */
-
-    background-image: url(/img/chunky/chunky_eating.gif);
-
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100vh;
-    display: grid;
-    background-size: cover;
-    place-items: center;
-    padding: 0;
-    margin: 0;
-
-
-    h1 {
+    .subhero.chunky {
         color: white;
-        font-size: 4.5em;
+        /* Adds a semi-transparent black tint */
 
-        /* padding-top: 2.5em; */
+        background-image: url(/img/chunky/chunky_eating.gif);
 
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100vh;
+        display: grid;
+        background-size: cover;
+        place-items: center;
+        padding: 0;
+        margin: 0;
+
+
+        h1 {
+            color: white;
+            font-size: 4.5em;
+
+            /* padding-top: 2.5em; */
+
+
+        }
 
     }
 
-}
-
-.subhero.taco {
-    color: white;
-    /* Adds a semi-transparent black tint */
-
-    background-image: url(/img/taco/taco_baby_sq.gif);
-
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100vh;
-    display: grid;
-    background-size: cover;
-    place-items: center;
-    padding: 0;
-    margin: 0;
-
-
-    h1 {
+    .subhero.taco {
         color: white;
-        font-size: 4.5em;
+        /* Adds a semi-transparent black tint */
 
-        /* padding-top: 2.5em; */
+        background-image: url(/img/taco/taco_baby_sq.gif);
 
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100vh;
+        display: grid;
+        background-size: cover;
+        place-items: center;
+        padding: 0;
+        margin: 0;
+
+
+        h1 {
+            color: white;
+            font-size: 4.5em;
+
+            /* padding-top: 2.5em; */
+
+
+        }
 
     }
 
-}
-
-.subhero.talk {
-    color: white;
-    /* Adds a semi-transparent black tint */
-
-    background-image: url(/img/talk/talk_hero_mobile.jpg);
-
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100vh;
-    display: grid;
-    background-size: cover;
-    place-items: center;
-    padding: 0;
-    margin: 0;
-
-
-    h1 {
+    .subhero.talk {
         color: white;
-        font-size: 4.5em;
+        /* Adds a semi-transparent black tint */
 
-        /* padding-top: 2.5em; */
+        background-image: url(/img/talk/talk_hero_mobile.jpg);
+
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100vh;
+        display: grid;
+        background-size: cover;
+        place-items: center;
+        padding: 0;
+        margin: 0;
+
+
+        h1 {
+            color: white;
+            font-size: 4.5em;
+
+            /* padding-top: 2.5em; */
+
+
+        }
+
+
+
 
 
     }
-
-
-
-
 
 }
 
