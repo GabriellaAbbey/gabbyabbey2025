@@ -1522,7 +1522,7 @@ a {
 .project-info h1,
 .project-info h2,
 .project-info h3 {
-    color: white;
+    color: var(--color-siteheader-background)
 }
 
 .project-info {
@@ -1560,7 +1560,20 @@ a {
 
 @media (max-width: 768px) {
     .title {
-        font-size: 3em;
+        font-size: 3ch;
+    }
+
+    #works,
+    #about,
+    #next,
+    .subcontainer {
+        h1 {
+            font-size: 2em;
+            font-weight: 400;
+            ;
+        }
+
+
     }
 }
 
@@ -1753,12 +1766,24 @@ body {
     h1 {
 
 
-        font-size: 3em;
+        /* font-size: 3em; */
         font-weight: 300;
     }
 
     h2 {
         font-size: 1.5em;
+    }
+}
+
+@media (min-width: 768px) {
+
+    #works,
+    #about,
+    #next,
+    .subcontainer {
+        h1 {
+            font-size: 3em;
+        }
     }
 }
 
@@ -1817,6 +1842,14 @@ footer {
     padding: 0;
     /* display: flex;
     justify-content: start; */
+}
+
+@media (max-width: 768px) {
+    #projects .container {
+        max-width: 250px;
+
+    }
+
 }
 
 .visual-adjustment p {
@@ -2061,26 +2094,25 @@ footer {
     border-radius: 10px;
 }
 
-@media (max-width: 460px) {
+@media (max-width: 768px) {
     .project-info {
         padding: 1.5em;
     }
 
-    .title {
-        font-size: 2.05em;
-    }
+
 
     .project-type {
         font-size: 1.1em;
 
-        font-weight: 700;
+        font-weight: 300;
     }
 
     .apps {
         font-size: .9em;
 
-        font-weight: 700;
+        font-weight: 400;
     }
+
 }
 
 .scroll-section[data-visible="visible"] {
@@ -2293,7 +2325,7 @@ footer {
         color: white;
         /* Adds a semi-transparent black tint */
 
-        background-image: url(/img/sav/sav_door_mobile.gif);
+        background-image: url(/img/sav/sav_mobilemobile.gif);
 
         background-repeat: no-repeat;
         background-position: center;
