@@ -1998,38 +1998,37 @@ footer {
 }
 
 #next {
-    display: flex;
-    justify-content: start;
-    padding: 6em 2em 6em 0;
-    text-align: left;
+    padding-top: 3em;
+    border: 1px solid red;
 
-    h1 {
-        font-size: 4em;
+
+
+    .sub-section {
+        /* padding: 7em 0 7em 15em; */
+        display: flex;
+        justify-content: end;
     }
+
+
 
     a {
         text-decoration: none;
         color: #3aa22e;
+
+
+
     }
 
     a:hover {
         color: var(--color-links-hover);
     }
 
-    .container {
 
-        /* max-width: 1800px; */
-    }
 
 }
 
-@media (max-width: 768px) {
-    #next {
-        justify-content: end;
-        padding: 0 2em 2em 0;
 
-    }
-}
+
 
 /* Change from swiper-container to scroll-container */
 .scroll-container {
@@ -2764,4 +2763,18 @@ footer {
 
 iframe {
     border: none;
+}
+
+
+/* Hide the scrollbar for all elements */
+* {
+    scrollbar-width: none;
+    /* For Firefox */
+    -ms-overflow-style: none;
+    /* For Internet Explorer and Edge */
+}
+
+*::-webkit-scrollbar {
+    display: none;
+    /* For Chrome, Safari, and Opera */
 }
