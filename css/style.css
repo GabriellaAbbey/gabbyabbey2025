@@ -378,22 +378,41 @@ img {
 
 }
 
+@media (max-width: 768px) {
+    .topleft {
+        transform-origin: right top;
+        rotate: 0deg;
+        translate: 0 0%;
+        transition: all .5s ease-out;
+    }
 
 
+    .topleft.animate-rotation {
+        transform-origin: right top;
+        rotate: -90deg;
+        translate: -130% -10%;
+    }
 
-.topleft {
-    transform-origin: right top;
-    rotate: 0deg;
-    translate: 0 0%;
-    transition: all .5s ease-out;
 }
 
+@media (min-width: 768px) {
+    .topleft {
+        transform-origin: right top;
+        rotate: 0deg;
+        translate: 0 0%;
+        transition: all .5s ease-out;
+    }
 
-.topleft.animate-rotation {
-    transform-origin: right top;
-    rotate: -90deg;
-    translate: -130% -10%;
+
+    .topleft.animate-rotation {
+        transform-origin: right top;
+        rotate: -90deg;
+        translate: -110% -10%;
+    }
+
+
 }
+
 
 
 /* .topright-desktop {
