@@ -351,7 +351,7 @@ img {
     }
 
     .site-logo svg {
-        scale: .8;
+        scale: .6;
 
     }
 
@@ -392,7 +392,7 @@ img {
 .topleft.animate-rotation {
     transform-origin: right top;
     rotate: -90deg;
-    translate: -105% -10%;
+    translate: -130% -10%;
 }
 
 
@@ -453,14 +453,14 @@ img {
 
     100% {
         rotate: 90deg;
-        translate: 0% 400%;
+        translate: 0% 300%;
     }
 }
 
 @keyframes rotato-reverse {
     0% {
         rotate: 90deg;
-        translate: 0% 400%;
+        translate: 0% 300%;
     }
 
 
@@ -972,6 +972,11 @@ a:hover svg path {
 
     }
 
+}
+
+.site-menu-social li {
+    padding: 0 .5em 0 .5em;
+    /* border: 1px solid red; */
 }
 
 
