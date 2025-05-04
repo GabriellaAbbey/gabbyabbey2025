@@ -20,37 +20,7 @@ toggleMenuLinks.forEach((el) => {
 });
 
 
-// // BACKGROUND COLOR CHANGE JS WITH NO SWIPER
-// const sections = document.querySelectorAll('.scroll-section');
-// const backgroundImage = document.querySelector('.background-image');
 
-// const observer = new IntersectionObserver((entries) => {
-//   entries.forEach(entry => {
-//     if (entry.isIntersecting) {
-//       const slideNumber = entry.target.dataset.slide;
-//       backgroundImage.setAttribute('data-currentslide', slideNumber);
-//       entry.target.setAttribute('data-visible', 'visible');
-//     }
-//     else {
-//       entry.target.setAttribute('data-visible', 'hidden');
-//     }
-//   });
-// }, {
-//   threshold: .5
-// });
-
-
-
-
-// sections.forEach(section => {
-//   observer.observe(section);
-// });
-
-
-
-// sections.forEach(section => {
-//   section.setAttribute('data-visible', 'hidden');
-// });
 
 // BACKGROUND COLOR CHANGE JS WITH NO SWIPER
 const sections = document.querySelectorAll('.scroll-section');
@@ -124,3 +94,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+// CHANGE ACTIVE STATE FOR ALL TARGET ELEMENTS WITH INTERSECTION OBSERVER
+const myobserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.setAttribute("data-viewstate", "active");
+    } else {
+      entry.target.setAttribute("data-viewstate", "inactive");
+    };
+  });
+});
+
+const mytargets = document.querySelectorAll('.observe-me');
+mytargets.forEach((el) => {
+  myobserver.observe(el);
+});

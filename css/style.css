@@ -2778,3 +2778,61 @@ iframe {
     display: none;
     /* For Chrome, Safari, and Opera */
 }
+
+
+
+
+
+.observe-me {
+    opacity: 0;
+    transition: all .8s ease-out .5s;
+}
+
+.observe-me[data-viewstate="active"] {
+    opacity: 1;
+}
+
+.animate-from-left {
+    translate: -20px 0;
+}
+
+.animate-from-left[data-viewstate="active"] {
+    translate: 0 0;
+}
+
+.animate-from-right {
+    translate: 20px 0;
+}
+
+.animate-from-right[data-viewstate="active"] {
+    translate: 0 0;
+}
+
+.animate-from-bottom {
+    translate: 0 20px;
+}
+
+.animate-from-bottom[data-viewstate="active"] {
+    translate: 0 0;
+}
+
+.animate-dropin[data-viewstate="active"] {
+    translate: 0 0;
+    animation: drop-in 0.8s ease-out forwards;
+}
+
+@keyframes drop-in {
+    0% {
+        opacity: 0;
+        translate: 0 -10px;
+    }
+
+    100% {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+
+
+/* Continue for more nth-child elements as needed */
