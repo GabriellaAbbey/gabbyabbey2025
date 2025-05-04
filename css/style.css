@@ -1026,7 +1026,7 @@ a:hover svg path {
         .site-menu-button {
             display: block;
             background-color: transparent;
-            border: 1px solid var(--color-siteheader-links);
+            /* border: 1px solid var(--color-siteheader-links); */
             color: var(--color-siteheader-links);
             padding: .5em;
             position: relative;
@@ -1231,7 +1231,7 @@ a {
     /* max-width: 1600px; */
     padding-top: 6em;
     margin: 0;
-    border: 1px solid rgb(0, 255, 217);
+    /* border: 1px solid rgb(0, 255, 217); */
 
 }
 
@@ -1999,7 +1999,7 @@ footer {
 
 #next {
     padding-top: 3em;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 
 
 
