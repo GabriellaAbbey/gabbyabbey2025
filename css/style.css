@@ -2179,20 +2179,20 @@ footer {
 
 
 .background-image[data-currentslide='0'] {
-    background-image: url(../img/Frenzi/frenzihero.png);
+    background-image: url(../img/Frenzi/frenzi_hero.webp);
 }
 
 .background-image[data-currentslide='1'] {
-    background-image: url(../img/sav/sav_black.png);
+    background-image: url(../img/sav/sav_black.webp);
 }
 
 .background-image[data-currentslide='2'] {
-    background-image: url(../img/talk/talk_hero.png);
+    background-image: url(../img/talk/talk_hero.webp);
 
 }
 
 .background-image[data-currentslide='3'] {
-    background-image: url(../img/pitviper/pv_helmet.png);
+    background-image: url(../img//pitviper/pv_helmets_2.webp);
 }
 
 
