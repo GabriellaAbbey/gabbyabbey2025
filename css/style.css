@@ -2577,13 +2577,13 @@ footer {
     }
 
     h2 {
-        padding-bottom: var(--unit-xs);
+        padding-bottom: var(--unit-small);
         padding-left: .1em;
         text-align: left;
     }
 
     p {
-        padding-left: .3em;
+        /* padding-left: .3em; */
     }
 }
 
