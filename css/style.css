@@ -2835,5 +2835,24 @@ iframe {
 }
 
 
+video {
 
-/* Continue for more nth-child elements as needed */
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: transparent;
+}
+
+/* 
+.hero-video {
+    object-fit: cover;
+    background-size: cover;
+} */
+/* 
+@media (max-width: 768px) {
+    .hero-video {
+        display: none;
+        height: auto;
+        width: 100%;
+    }
+} */
